@@ -13,6 +13,7 @@
 		09C0E5D61DA84EF60019E4AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D41DA84EF60019E4AF /* Main.storyboard */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
 		09C0E5DB1DA84EF60019E4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D91DA84EF60019E4AF /* LaunchScreen.storyboard */; };
+		D96ED2ADC69F1161B36196A9 /* Pods_modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEBABD137198392F18EFA5 /* Pods_modular.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C0E5DA1DA84EF60019E4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09C0E5DC1DA84EF60019E4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.release.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.release.xcconfig"; sourceTree = "<group>"; };
+		90DEBABD137198392F18EFA5 /* Pods_modular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB36D5FAB87BDFB52A97E865 /* Pods-modular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.debug.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96ED2ADC69F1161B36196A9 /* Pods_modular.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				09C0E5CD1DA84EF60019E4AF /* modular */,
 				09C0E5CC1DA84EF60019E4AF /* Products */,
+				51D1241762B4FFDD881789C8 /* Pods */,
+				827D7B250563B2DC07F76E0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = modular;
 			sourceTree = "<group>";
 		};
+		51D1241762B4FFDD881789C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB36D5FAB87BDFB52A97E865 /* Pods-modular.debug.xcconfig */,
+				40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		827D7B250563B2DC07F76E0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90DEBABD137198392F18EFA5 /* Pods_modular.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09C0E5DF1DA84EF60019E4AF /* Build configuration list for PBXNativeTarget "modular" */;
 			buildPhases = (
+				535CBD4C1719EB1915301102 /* [CP] Check Pods Manifest.lock */,
 				09C0E5C71DA84EF60019E4AF /* Sources */,
 				09C0E5C81DA84EF60019E4AF /* Frameworks */,
 				09C0E5C91DA84EF60019E4AF /* Resources */,
+				C98FDD517160B7BEF0C04F3F /* [CP] Embed Pods Frameworks */,
+				A3B1C3250A8A403D09ECA96E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		535CBD4C1719EB1915301102 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3B1C3250A8A403D09ECA96E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-modular/Pods-modular-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C98FDD517160B7BEF0C04F3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-modular/Pods-modular-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09C0E5C71DA84EF60019E4AF /* Sources */ = {
@@ -262,6 +337,7 @@
 		};
 		09C0E5E01DA84EF60019E4AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB36D5FAB87BDFB52A97E865 /* Pods-modular.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = modular/Info.plist;
@@ -274,6 +350,7 @@
 		};
 		09C0E5E11DA84EF60019E4AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = modular/Info.plist;
@@ -303,6 +380,7 @@
 				09C0E5E11DA84EF60019E4AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
