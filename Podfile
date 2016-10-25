@@ -6,5 +6,6 @@ target 'modular' do
   use_frameworks!
 
   # Pods for modular
+  pod 'ReSwift'
 
 end
