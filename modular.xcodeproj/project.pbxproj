@@ -17,6 +17,11 @@
 		0985AF6F1DC02C3000FE3321 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF6E1DC02C3000FE3321 /* Cart.swift */; };
 		0985AF711DC02C6700FE3321 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF701DC02C6700FE3321 /* Address.swift */; };
 		0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF721DC02C8000FE3321 /* PaymentMethod.swift */; };
+		0985AF751DC036DD00FE3321 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0985AF741DC036DD00FE3321 /* Market.storyboard */; };
+		0985AF771DC038FC00FE3321 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0985AF761DC038FC00FE3321 /* Cart.storyboard */; };
+		0985AF791DC0391900FE3321 /* CartInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF781DC0391900FE3321 /* CartInterface.swift */; };
+		0985AF7B1DC0392600FE3321 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF7A1DC0392600FE3321 /* CartViewController.swift */; };
+		0985AF7E1DC0394E00FE3321 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF7D1DC0394E00FE3321 /* Component.swift */; };
 		09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
 		09C0E5DB1DA84EF60019E4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D91DA84EF60019E4AF /* LaunchScreen.storyboard */; };
@@ -34,6 +39,11 @@
 		0985AF6E1DC02C3000FE3321 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		0985AF701DC02C6700FE3321 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		0985AF721DC02C8000FE3321 /* PaymentMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		0985AF741DC036DD00FE3321 /* Market.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
+		0985AF761DC038FC00FE3321 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		0985AF781DC0391900FE3321 /* CartInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartInterface.swift; sourceTree = "<group>"; };
+		0985AF7A1DC0392600FE3321 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		0985AF7D1DC0394E00FE3321 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		09C0E5CB1DA84EF60019E4AF /* modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +94,14 @@
 			name = product;
 			sourceTree = "<group>";
 		};
+		0985AF7C1DC0393F00FE3321 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				0985AF7D1DC0394E00FE3321 /* Component.swift */,
+			);
+			name = component;
+			sourceTree = "<group>";
+		};
 		09C0E5C21DA84EF60019E4AF = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +136,7 @@
 		09C0E5E31DA853610019E4AF /* common */ = {
 			isa = PBXGroup;
 			children = (
+				0985AF7C1DC0393F00FE3321 /* component */,
 				0985AF5E1DC0164F00FE3321 /* models */,
 				09C0E5EC1DA855490019E4AF /* router */,
 				090DCC411DBEDB5B00FA55D9 /* services */,
@@ -130,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				09C0E5E81DA854190019E4AF /* account */,
-				09C0E5E71DA8537F0019E4AF /* basket */,
+				09C0E5E71DA8537F0019E4AF /* cart */,
 				09C0E5E91DA854E90019E4AF /* landing */,
 				09C0E5EA1DA854F10019E4AF /* login */,
 				09C0E5E51DA8536F0019E4AF /* main */,
@@ -152,16 +171,20 @@
 			children = (
 				0985AF5C1DC0136100FE3321 /* MarketInterface.swift */,
 				0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */,
+				0985AF741DC036DD00FE3321 /* Market.storyboard */,
 			);
 			name = market;
 			path = components/market;
 			sourceTree = "<group>";
 		};
-		09C0E5E71DA8537F0019E4AF /* basket */ = {
+		09C0E5E71DA8537F0019E4AF /* cart */ = {
 			isa = PBXGroup;
 			children = (
+				0985AF781DC0391900FE3321 /* CartInterface.swift */,
+				0985AF7A1DC0392600FE3321 /* CartViewController.swift */,
+				0985AF761DC038FC00FE3321 /* Cart.storyboard */,
 			);
-			name = basket;
+			name = cart;
 			sourceTree = "<group>";
 		};
 		09C0E5E81DA854190019E4AF /* account */ = {
@@ -279,7 +302,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0985AF771DC038FC00FE3321 /* Cart.storyboard in Resources */,
 				09C0E5DB1DA84EF60019E4AF /* LaunchScreen.storyboard in Resources */,
+				0985AF751DC036DD00FE3321 /* Market.storyboard in Resources */,
 				09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,10 +365,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0985AF5B1DC0124A00FE3321 /* MarketViewController.swift in Sources */,
+				0985AF7E1DC0394E00FE3321 /* Component.swift in Sources */,
 				0985AF6F1DC02C3000FE3321 /* Cart.swift in Sources */,
 				0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */,
 				0985AF671DC0250100FE3321 /* AppStore.swift in Sources */,
 				0985AF6B1DC026C900FE3321 /* Market.swift in Sources */,
+				0985AF791DC0391900FE3321 /* CartInterface.swift in Sources */,
+				0985AF7B1DC0392600FE3321 /* CartViewController.swift in Sources */,
 				0985AF711DC02C6700FE3321 /* Address.swift in Sources */,
 				0985AF601DC0168D00FE3321 /* Order.swift in Sources */,
 				0985AF6D1DC0281C00FE3321 /* User.swift in Sources */,

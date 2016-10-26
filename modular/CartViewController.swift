@@ -1,5 +1,5 @@
 //
-//  MarketViewController.swift
+//  CartViewController.swift
 //  modular
 //
 //  Created by Arlo Armstrong on 10/25/16.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MarketViewController: UITableViewController {
+class CartViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

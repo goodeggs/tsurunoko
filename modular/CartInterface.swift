@@ -1,5 +1,5 @@
 //
-//  MarketInterface.swift
+//  CartInterface.swift
 //  modular
 //
 //  Created by Arlo Armstrong on 10/25/16.
@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
-enum Market: Component {
+enum Cart: Component {
 
     func rootViewController() -> UIViewController {
-        return UIStoryboard(name: "Market", bundle: nil).instantiateInitialViewController()!
+        return UIStoryboard(name: "Cart", bundle: nil).instantiateInitialViewController()!
     }
 }
