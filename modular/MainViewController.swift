@@ -1,5 +1,5 @@
 //
-//  CartInterface.swift
+//  MainViewController.swift
 //  modular
 //
 //  Created by Arlo Armstrong on 10/25/16.
@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-enum Cart: Component {
+class MainViewController: UITabBarController {
 
-    static var identifier = "Cart"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
 }

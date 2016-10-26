@@ -1,5 +1,5 @@
 //
-//  CartInterface.swift
+//  MainRouter.swift
 //  modular
 //
 //  Created by Arlo Armstrong on 10/25/16.
@@ -7,9 +7,3 @@
 //
 
 import Foundation
-import UIKit
-
-enum Cart: Component {
-
-    static var identifier = "Cart"
-}

@@ -11,5 +11,13 @@ import UIKit
 
 protocol Component {
 
-    func rootViewController() -> UIViewController
+    static var identifier: String { get }
+    static func rootViewController() -> UIViewController
+}
+
+extension Component {
+
+    static func rootViewController() -> UIViewController {
+        return UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController()!
+    }
 }

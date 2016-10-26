@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 enum Market: Component {
 
-    func rootViewController() -> UIViewController {
-        return UIStoryboard(name: "Market", bundle: nil).instantiateInitialViewController()!
-    }
+    static var identifier = "Market"
 }

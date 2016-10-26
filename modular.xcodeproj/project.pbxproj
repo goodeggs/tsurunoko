@@ -22,6 +22,9 @@
 		0985AF791DC0391900FE3321 /* CartInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF781DC0391900FE3321 /* CartInterface.swift */; };
 		0985AF7B1DC0392600FE3321 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF7A1DC0392600FE3321 /* CartViewController.swift */; };
 		0985AF7E1DC0394E00FE3321 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF7D1DC0394E00FE3321 /* Component.swift */; };
+		0985AF801DC03A3A00FE3321 /* MainInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF7F1DC03A3A00FE3321 /* MainInterface.swift */; };
+		0985AF821DC03AA200FE3321 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF811DC03AA200FE3321 /* MainViewController.swift */; };
+		0985AF841DC040E000FE3321 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF831DC040E000FE3321 /* MainRouter.swift */; };
 		09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
 		09C0E5DB1DA84EF60019E4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D91DA84EF60019E4AF /* LaunchScreen.storyboard */; };
@@ -44,6 +47,9 @@
 		0985AF781DC0391900FE3321 /* CartInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartInterface.swift; sourceTree = "<group>"; };
 		0985AF7A1DC0392600FE3321 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		0985AF7D1DC0394E00FE3321 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		0985AF7F1DC03A3A00FE3321 /* MainInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterface.swift; sourceTree = "<group>"; };
+		0985AF811DC03AA200FE3321 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0985AF831DC040E000FE3321 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		09C0E5CB1DA84EF60019E4AF /* modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 		09C0E5E51DA8536F0019E4AF /* main */ = {
 			isa = PBXGroup;
 			children = (
+				0985AF7F1DC03A3A00FE3321 /* MainInterface.swift */,
+				0985AF811DC03AA200FE3321 /* MainViewController.swift */,
+				0985AF831DC040E000FE3321 /* MainRouter.swift */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -367,13 +376,16 @@
 				0985AF5B1DC0124A00FE3321 /* MarketViewController.swift in Sources */,
 				0985AF7E1DC0394E00FE3321 /* Component.swift in Sources */,
 				0985AF6F1DC02C3000FE3321 /* Cart.swift in Sources */,
+				0985AF841DC040E000FE3321 /* MainRouter.swift in Sources */,
 				0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */,
 				0985AF671DC0250100FE3321 /* AppStore.swift in Sources */,
 				0985AF6B1DC026C900FE3321 /* Market.swift in Sources */,
 				0985AF791DC0391900FE3321 /* CartInterface.swift in Sources */,
+				0985AF821DC03AA200FE3321 /* MainViewController.swift in Sources */,
 				0985AF7B1DC0392600FE3321 /* CartViewController.swift in Sources */,
 				0985AF711DC02C6700FE3321 /* Address.swift in Sources */,
 				0985AF601DC0168D00FE3321 /* Order.swift in Sources */,
+				0985AF801DC03A3A00FE3321 /* MainInterface.swift in Sources */,
 				0985AF6D1DC0281C00FE3321 /* User.swift in Sources */,
 				0985AF691DC0256D00FE3321 /* Model.swift in Sources */,
 				09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */,
