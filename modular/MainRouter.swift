@@ -21,18 +21,19 @@ class MainRouter: NSObject, Routable {
         self.routeMap = routeMap
     }
 
-    public func changeRouteSegment(fromSegment: RouteElementIdentifier,
-                                   to: RouteElementIdentifier,
-                                   animated: Bool,
-                                   completionHandler: RoutingCompletionHandler) -> Routable {
+    func changeRouteSegment(
+        _ from: RouteElementIdentifier,
+        to: RouteElementIdentifier,
+        animated: Bool,
+        completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         return selectTab(for: to, animated: animated, completionHandler: completionHandler)
     }
 
-    public func pushRouteSegment(
-        routeElementIdentifier: RouteElementIdentifier,
+    func pushRouteSegment(
+        _ routeElementIdentifier: RouteElementIdentifier,
         animated: Bool,
-        completionHandler: RoutingCompletionHandler) -> Routable {
+        completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         return selectTab(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
     }
@@ -40,6 +41,15 @@ class MainRouter: NSObject, Routable {
     func selectTab(for route: RouteElementIdentifier,
                    animated: Bool,
                    completionHandler: RoutingCompletionHandler) -> Routable {
+
+        defer {
+            completionHandler()
+        }
+
+        guard route != Main.identifier else {
+            return self
+        }
+
         guard let component = routeMap[route] else {
             fatalError("Unable to handle route to '\(route)'.")
         }
@@ -50,7 +60,6 @@ class MainRouter: NSObject, Routable {
         }
 
         mainViewController.selectedIndex = index
-        completionHandler()
         return component.router
     }
 }
@@ -77,9 +86,9 @@ extension MainRouter: UITabBarControllerDelegate {
             fatalError("Unable to find matching root for tab view controller.")
         }
 
-//        mainStore.dispatch(
-//            SetRouteAction([Main.identifier, route])
-//        )
+        mainStore.dispatch(
+            SetRouteAction([Main.identifier, route])
+        )
 
         return false
     }

@@ -33,6 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state.navigationState
         }
 
+        // TODO: <ARLO> does this event need to be fired or could the navigation state default to Main? 
+        mainStore.dispatch { state, store in
+            if state.navigationState.route == [] {
+                return SetRouteAction([Main.identifier])
+            } else {
+                return nil
+            }
+        }
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootComponent.rootViewController
         window?.makeKeyAndVisible()

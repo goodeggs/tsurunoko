@@ -32,19 +32,15 @@ struct AppState: StateType, HasNavigationState {
 struct AppReducer: Reducer {
 
     func handleAction(action: Action, state: AppState?) -> AppState {
-        if let state = state {
-            return state
-        } else {
-            let navigationState = NavigationState()
-            let market = Model.Market(id: "", productGroupIDs: [])
-            return AppState(
-                navigationState: navigationState,
-                market: market,
-                productGroups: [],
-                products: [],
-                producers: []
-            )
-        }
+        let navigationState = NavigationReducer.handleAction(action, state: state?.navigationState)
+        let market = Model.Market(id: "", productGroupIDs: [])
+        return AppState(
+            navigationState: navigationState,
+            market: market,
+            productGroups: [],
+            products: [],
+            producers: []
+        )
     }
 }
 
