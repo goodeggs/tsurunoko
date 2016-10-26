@@ -25,6 +25,8 @@
 		0985AF801DC03A3A00FE3321 /* MainInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF7F1DC03A3A00FE3321 /* MainInterface.swift */; };
 		0985AF821DC03AA200FE3321 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF811DC03AA200FE3321 /* MainViewController.swift */; };
 		0985AF841DC040E000FE3321 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF831DC040E000FE3321 /* MainRouter.swift */; };
+		0985AF861DC05BD800FE3321 /* MarketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF851DC05BD800FE3321 /* MarketRouter.swift */; };
+		0985AF881DC05BF100FE3321 /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF871DC05BF100FE3321 /* CartRouter.swift */; };
 		09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
 		09C0E5DB1DA84EF60019E4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D91DA84EF60019E4AF /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 		0985AF7F1DC03A3A00FE3321 /* MainInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterface.swift; sourceTree = "<group>"; };
 		0985AF811DC03AA200FE3321 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0985AF831DC040E000FE3321 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		0985AF851DC05BD800FE3321 /* MarketRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketRouter.swift; sourceTree = "<group>"; };
+		0985AF871DC05BF100FE3321 /* CartRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartRouter.swift; sourceTree = "<group>"; };
 		09C0E5CB1DA84EF60019E4AF /* modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,26 +133,17 @@
 		09C0E5CD1DA84EF60019E4AF /* modular */ = {
 			isa = PBXGroup;
 			children = (
-				09C0E5E31DA853610019E4AF /* common */,
-				09C0E5E41DA853680019E4AF /* components */,
 				09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */,
+				0985AF7C1DC0393F00FE3321 /* component */,
+				09C0E5E41DA853680019E4AF /* components */,
+				0985AF5E1DC0164F00FE3321 /* models */,
+				090DCC411DBEDB5B00FA55D9 /* services */,
+				09C0E5EB1DA855360019E4AF /* store */,
 				09C0E5D71DA84EF60019E4AF /* Assets.xcassets */,
 				09C0E5D91DA84EF60019E4AF /* LaunchScreen.storyboard */,
 				09C0E5DC1DA84EF60019E4AF /* Info.plist */,
 			);
 			path = modular;
-			sourceTree = "<group>";
-		};
-		09C0E5E31DA853610019E4AF /* common */ = {
-			isa = PBXGroup;
-			children = (
-				0985AF7C1DC0393F00FE3321 /* component */,
-				0985AF5E1DC0164F00FE3321 /* models */,
-				09C0E5EC1DA855490019E4AF /* router */,
-				090DCC411DBEDB5B00FA55D9 /* services */,
-				09C0E5EB1DA855360019E4AF /* store */,
-			);
-			name = common;
 			sourceTree = "<group>";
 		};
 		09C0E5E41DA853680019E4AF /* components */ = {
@@ -169,8 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				0985AF7F1DC03A3A00FE3321 /* MainInterface.swift */,
-				0985AF811DC03AA200FE3321 /* MainViewController.swift */,
 				0985AF831DC040E000FE3321 /* MainRouter.swift */,
+				0985AF811DC03AA200FE3321 /* MainViewController.swift */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -179,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				0985AF5C1DC0136100FE3321 /* MarketInterface.swift */,
+				0985AF851DC05BD800FE3321 /* MarketRouter.swift */,
 				0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */,
 				0985AF741DC036DD00FE3321 /* Market.storyboard */,
 			);
@@ -190,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				0985AF781DC0391900FE3321 /* CartInterface.swift */,
+				0985AF871DC05BF100FE3321 /* CartRouter.swift */,
 				0985AF7A1DC0392600FE3321 /* CartViewController.swift */,
 				0985AF761DC038FC00FE3321 /* Cart.storyboard */,
 			);
@@ -223,13 +220,6 @@
 				0985AF661DC0250100FE3321 /* AppStore.swift */,
 			);
 			path = store;
-			sourceTree = "<group>";
-		};
-		09C0E5EC1DA855490019E4AF /* router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = router;
 			sourceTree = "<group>";
 		};
 		51D1241762B4FFDD881789C8 /* Pods */ = {
@@ -387,8 +377,10 @@
 				0985AF601DC0168D00FE3321 /* Order.swift in Sources */,
 				0985AF801DC03A3A00FE3321 /* MainInterface.swift in Sources */,
 				0985AF6D1DC0281C00FE3321 /* User.swift in Sources */,
+				0985AF881DC05BF100FE3321 /* CartRouter.swift in Sources */,
 				0985AF691DC0256D00FE3321 /* Model.swift in Sources */,
 				09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */,
+				0985AF861DC05BD800FE3321 /* MarketRouter.swift in Sources */,
 				0985AF5D1DC0136100FE3321 /* MarketInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

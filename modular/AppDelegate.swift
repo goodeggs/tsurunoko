@@ -7,18 +7,35 @@
 //
 
 import UIKit
+import ReSwift
+import ReSwiftRouter
+
+// TODO: <ARLO> how best to expose this property? Currently it looks globablly modifiable
+var mainStore = AppStore(
+    reducer: AppReducer(),
+    state: nil,
+    middleware: [
+        loggingMiddleware,
+    ]
+)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var router: Router<AppState>!
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        // create router
-        // create store
-        // register components
+        let rootComponent = Main.newComponent()
+
+        router = Router(store: mainStore, rootRoutable: rootComponent.router) { state in
+            state.navigationState
+        }
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rootComponent.rootViewController
+        window?.makeKeyAndVisible()
 
         return true
     }
@@ -44,7 +61,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

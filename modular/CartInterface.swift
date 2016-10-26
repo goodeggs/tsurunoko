@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
-enum Cart: Component {
+enum Cart: ComponentInterface {
 
     static var identifier = "Cart"
+
+    static func newComponent() -> Component {
+        let router = CartRouter()
+        let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! CartViewController
+        return ComponentImpl(router: router, rootViewController: viewController)
+    }
 }
+

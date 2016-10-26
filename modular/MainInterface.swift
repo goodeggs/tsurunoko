@@ -8,40 +8,30 @@
 
 import Foundation
 import UIKit
+import ReSwiftRouter
 
-enum Main: Component {
+enum Main: ComponentInterface {
 
     static var identifier = "Main"
 
-    static func rootViewController() -> UIViewController {
+    static func newComponent() -> Component {
 
-        let marketViewController = Market.rootViewController()
-        let cartViewController = Cart.rootViewController()
-
+        let market = Market.newComponent()
+        let cart = Cart.newComponent()
+        // TODO: <ARLO> put these in navigation controllers so you can tell them apart
         let mainViewController = MainViewController()
-        mainViewController.viewControllers = [marketViewController, cartViewController]
-        mainViewController.delegate = mainViewController
+        mainViewController.viewControllers = [market.rootViewController, cart.rootViewController]
+        // TODO: <ARLO> add tab bar buttons
+
+        let routeMap = [
+            Market.identifier: market,
+            Cart.identifier: cart
+        ]
+        let router = MainRouter(mainViewController: mainViewController, routeMap: routeMap)
+
+        mainViewController.delegate = router
         
-        return mainViewController
-    }
-}
-
-extension MainViewController: UITabBarControllerDelegate {
-
-    func tabBarController(_ tabBarController: UITabBarController,
-                          shouldSelect viewController: UIViewController) -> Bool {
-
-        if viewController is MarketViewController {
-//            mainStore.dispatch(
-//                SetRouteAction([Main.identifier, Market.identifier])
-//            )
-        } else if viewController is CartViewController {
-//            mainStore.dispatch(
-//                SetRouteAction([Main.identifier, Cart.identifier])
-//            )
-        }
-
-        return false
+        return router
     }
 }
 

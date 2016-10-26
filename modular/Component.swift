@@ -8,16 +8,30 @@
 
 import Foundation
 import UIKit
+import ReSwiftRouter
+
+protocol ComponentInterface {
+
+    typealias ID = String
+
+    static var identifier: ID { get }
+    static func newComponent() -> Component
+}
 
 protocol Component {
 
-    static var identifier: String { get }
-    static func rootViewController() -> UIViewController
+    var router: Routable { get }
+    var rootViewController: UIViewController { get }
 }
 
-extension Component {
+class ComponentImpl: Component {
 
-    static func rootViewController() -> UIViewController {
-        return UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController()!
+    var router: Routable
+    var rootViewController: UIViewController
+
+    init(router: Routable, rootViewController: UIViewController) {
+        self.router = router
+        self.rootViewController = rootViewController
     }
 }
+

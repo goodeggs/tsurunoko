@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
-enum Market: Component {
+enum Market: ComponentInterface {
 
     static var identifier = "Market"
+
+    static func newComponent() -> Component {
+        let router = MarketRouter()
+        let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! MarketViewController
+        return ComponentImpl(router: router, rootViewController: viewController)
+    }
 }
+
