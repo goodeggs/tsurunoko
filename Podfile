@@ -8,5 +8,6 @@ target 'modular' do
   # Pods for modular
   pod 'ReSwift'
   pod 'ReSwiftRouter'
+  pod 'Then'
 
 end

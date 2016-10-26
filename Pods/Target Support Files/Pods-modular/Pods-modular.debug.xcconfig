@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/ReSwift" "$PODS_CONFIGURATION_BUILD_DIR/ReSwiftRouter"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/ReSwift" "$PODS_CONFIGURATION_BUILD_DIR/ReSwiftRouter" "$PODS_CONFIGURATION_BUILD_DIR/Then"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReSwift/ReSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReSwiftRouter/ReSwiftRouter.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "ReSwift" -framework "ReSwiftRouter"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReSwift/ReSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReSwiftRouter/ReSwiftRouter.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Then/Then.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "ReSwift" -framework "ReSwiftRouter" -framework "Then"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

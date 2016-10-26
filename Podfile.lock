@@ -2,15 +2,18 @@ PODS:
   - ReSwift (2.1.0)
   - ReSwiftRouter (0.4.0):
     - ReSwift (~> 2.1)
+  - Then (2.0.0)
 
 DEPENDENCIES:
   - ReSwift
   - ReSwiftRouter
+  - Then
 
 SPEC CHECKSUMS:
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   ReSwiftRouter: de452879035ea88ed51bb0bc3a2b7bd55365ab81
+  Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
 
-PODFILE CHECKSUM: e139e2dc928f528d5d68d76ee56b743956893a70
+PODFILE CHECKSUM: e0f148f327a5615f9a684da569ae6026136932db
 
 COCOAPODS: 1.1.1
