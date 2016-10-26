@@ -83,6 +83,13 @@
 			name = services;
 			sourceTree = "<group>";
 		};
+		09463B731DC1696000699737 /* authenticate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = authenticate;
+			sourceTree = "<group>";
+		};
 		0985AF5E1DC0164F00FE3321 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +116,7 @@
 			children = (
 				0985AF7D1DC0394E00FE3321 /* Component.swift */,
 			);
-			name = component;
+			path = component;
 			sourceTree = "<group>";
 		};
 		09C0E5C21DA84EF60019E4AF = {
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				09C0E5E81DA854190019E4AF /* account */,
+				09463B731DC1696000699737 /* authenticate */,
 				09C0E5E71DA8537F0019E4AF /* cart */,
 				09C0E5E91DA854E90019E4AF /* landing */,
 				09C0E5EA1DA854F10019E4AF /* login */,
@@ -167,7 +175,7 @@
 				0985AF831DC040E000FE3321 /* MainRouter.swift */,
 				0985AF811DC03AA200FE3321 /* MainViewController.swift */,
 			);
-			name = main;
+			path = main;
 			sourceTree = "<group>";
 		};
 		09C0E5E61DA853750019E4AF /* market */ = {
@@ -190,7 +198,7 @@
 				0985AF7A1DC0392600FE3321 /* CartViewController.swift */,
 				0985AF761DC038FC00FE3321 /* Cart.storyboard */,
 			);
-			name = cart;
+			path = cart;
 			sourceTree = "<group>";
 		};
 		09C0E5E81DA854190019E4AF /* account */ = {
