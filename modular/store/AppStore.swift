@@ -21,6 +21,7 @@ struct AppState: StateType, HasNavigationState {
     let products: [Model.Product]
     let producers: [Model.Producer]
 
+    let authenticated: Bool
 //    let user: Model.User
 //    let cart: Model.Cart
 //    let orders: [Model.Order]
@@ -32,14 +33,20 @@ struct AppState: StateType, HasNavigationState {
 struct AppReducer: Reducer {
 
     func handleAction(action: Action, state: AppState?) -> AppState {
-        let navigationState = NavigationReducer.handleAction(action, state: state?.navigationState)
+        let navigationState: NavigationState
+        if state == nil {
+            navigationState = NavigationState()
+        } else {
+            navigationState = NavigationReducer.handleAction(action, state: state?.navigationState)
+        }
         let market = Model.Market(id: "", productGroupIDs: [])
         return AppState(
             navigationState: navigationState,
             market: market,
             productGroups: [],
             products: [],
-            producers: []
+            producers: [],
+            authenticated: false
         )
     }
 }

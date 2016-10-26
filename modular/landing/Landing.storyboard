@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2553a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L4n-Es-mxq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing View Controller-->
+        <scene sceneID="ohS-2D-j9v">
+            <objects>
+                <viewController id="L4n-Es-mxq" customClass="LandingViewController" customModule="modular" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9gv-8f-1yQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4JT-Yb-TJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gh6-Ac-ffe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tsurunoko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TI4-lU-nvT">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw3-Z3-Hyn">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVx-LT-xzZ">
+                                        <state key="normal" title="Authenticate"/>
+                                        <connections>
+                                            <action selector="authenticateTapped:" destination="L4n-Es-mxq" eventType="touchUpInside" id="aw5-Sa-xgB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uw3-Z3-Hyn" firstAttribute="leading" secondItem="gh6-Ac-ffe" secondAttribute="leadingMargin" id="94y-yS-axJ"/>
+                            <constraint firstItem="uw3-Z3-Hyn" firstAttribute="top" secondItem="TI4-lU-nvT" secondAttribute="bottom" constant="8" id="dNg-Ye-GL8"/>
+                            <constraint firstItem="4JT-Yb-TJZ" firstAttribute="top" secondItem="uw3-Z3-Hyn" secondAttribute="bottom" id="gDt-tq-78i"/>
+                            <constraint firstItem="TI4-lU-nvT" firstAttribute="centerX" secondItem="gh6-Ac-ffe" secondAttribute="centerX" id="mLR-NS-qf6"/>
+                            <constraint firstItem="TI4-lU-nvT" firstAttribute="centerY" secondItem="gh6-Ac-ffe" secondAttribute="centerY" id="q9d-zx-MLZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uw3-Z3-Hyn" secondAttribute="trailing" id="rJm-uY-395"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authenticateButton" destination="qVx-LT-xzZ" id="oOd-LB-lk3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="by4-4g-Enl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="142.57871064467767"/>
+        </scene>
+    </scenes>
+</document>
