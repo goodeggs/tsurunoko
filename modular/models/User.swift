@@ -18,7 +18,5 @@ extension Model {
         let name: String
         let email: String
         let password: String
-        let addressIDs: [Address.ID]
-        let paymentMethodIDs: [PaymentMethod.ID]
     }
 }

@@ -7,15 +7,21 @@
 //
 
 import Foundation
+import ReSwift
+import ReSwiftRouter
 
-struct AppStore {
+struct AppStore: StateType, HasNavigationState {
 
-    let navigationPath: String
-    let market: MarketModel
-    let productGroups: [ProductGroup]
-    let products: [Product]
-    let producers: [Producer]
-    let orders: [Order]
-    let carts: [Cart]
-    let addresses: [Address]
+    var navigationState: NavigationState
+
+    let market: Model.Market
+    let productGroups: [Model.ProductGroup]
+    let products: [Model.Product]
+    let producers: [Model.Producer]
+
+    let user: Model.User
+    let cart: Model.Cart
+    let orders: [Model.Order]
+    let addresses: [Model.Address]
+    let paymentMethods: [Model.PaymentMethod]
 }
