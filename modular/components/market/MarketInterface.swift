@@ -1,5 +1,5 @@
 //
-//  Market.swift
+//  MarketInterface.swift
 //  modular
 //
 //  Created by Arlo Armstrong on 10/25/16.

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0985AF5B1DC0124A00FE3321 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */; };
-		0985AF5D1DC0136100FE3321 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF5C1DC0136100FE3321 /* Market.swift */; };
+		0985AF5D1DC0136100FE3321 /* MarketInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF5C1DC0136100FE3321 /* MarketInterface.swift */; };
 		0985AF601DC0168D00FE3321 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF5F1DC0168D00FE3321 /* Order.swift */; };
 		0985AF671DC0250100FE3321 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF661DC0250100FE3321 /* AppStore.swift */; };
 		0985AF691DC0256D00FE3321 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF681DC0256D00FE3321 /* Model.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
-		0985AF5C1DC0136100FE3321 /* Market.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		0985AF5C1DC0136100FE3321 /* MarketInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketInterface.swift; sourceTree = "<group>"; };
 		0985AF5F1DC0168D00FE3321 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0985AF661DC0250100FE3321 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		0985AF681DC0256D00FE3321 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 		09C0E5E61DA853750019E4AF /* market */ = {
 			isa = PBXGroup;
 			children = (
+				0985AF5C1DC0136100FE3321 /* MarketInterface.swift */,
 				0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */,
-				0985AF5C1DC0136100FE3321 /* Market.swift */,
 			);
 			name = market;
 			path = components/market;
@@ -349,7 +349,7 @@
 				0985AF6D1DC0281C00FE3321 /* User.swift in Sources */,
 				0985AF691DC0256D00FE3321 /* Model.swift in Sources */,
 				09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */,
-				0985AF5D1DC0136100FE3321 /* Market.swift in Sources */,
+				0985AF5D1DC0136100FE3321 /* MarketInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
