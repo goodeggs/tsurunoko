@@ -11,6 +11,8 @@ import UIKit
 
 class LandingViewController: UIViewController {
 
+    var presenter: LandingPresenter!
+
     // MARK: - Views
 
     @IBOutlet weak var authenticateButton: UIButton!
@@ -25,7 +27,7 @@ class LandingViewController: UIViewController {
     // MARK: - Interaction
 
     @IBAction func authenticateTapped(_ sender: AnyObject) {
-
+        self.presenter.showAuthenticationModal()
     }
 }
 

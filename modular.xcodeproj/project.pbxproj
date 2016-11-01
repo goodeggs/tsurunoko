@@ -37,6 +37,7 @@
 		0985AF881DC05BF100FE3321 /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF871DC05BF100FE3321 /* CartRouter.swift */; };
 		09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
+		09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */; };
 		09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EA66021DC1820A0019FD0D /* Launch.storyboard */; };
 		09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA66061DC1854B0019FD0D /* LaunchRouter.swift */; };
 		D96ED2ADC69F1161B36196A9 /* Pods_modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEBABD137198392F18EFA5 /* Pods_modular.framework */; };
@@ -47,10 +48,10 @@
 		09463B751DC16AEE00699737 /* AuthenticateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateInterface.swift; sourceTree = "<group>"; };
 		09463B761DC16AEE00699737 /* AuthenticateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateRouter.swift; sourceTree = "<group>"; };
 		09463B771DC16AEE00699737 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
-		09463B7C1DC16C3000699737 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Landing.storyboard; path = landing/Landing.storyboard; sourceTree = "<group>"; };
-		09463B7D1DC16C3000699737 /* LandingInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingInterface.swift; path = landing/LandingInterface.swift; sourceTree = "<group>"; };
-		09463B7E1DC16C3000699737 /* LandingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingRouter.swift; path = landing/LandingRouter.swift; sourceTree = "<group>"; };
-		09463B7F1DC16C3000699737 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = landing/LandingViewController.swift; sourceTree = "<group>"; };
+		09463B7C1DC16C3000699737 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
+		09463B7D1DC16C3000699737 /* LandingInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingInterface.swift; sourceTree = "<group>"; };
+		09463B7E1DC16C3000699737 /* LandingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingRouter.swift; sourceTree = "<group>"; };
+		09463B7F1DC16C3000699737 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		0985AF5C1DC0136100FE3321 /* MarketInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketInterface.swift; sourceTree = "<group>"; };
 		0985AF5F1DC0168D00FE3321 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C0E5DC1DA84EF60019E4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
 		09EA66021DC1820A0019FD0D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		09EA66061DC1854B0019FD0D /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.release.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,7 +189,7 @@
 				09C0E5E61DA853750019E4AF /* market */,
 				0985AF611DC0178700FE3321 /* product */,
 			);
-			name = components;
+			path = components;
 			sourceTree = "<group>";
 		};
 		09C0E5E51DA8536F0019E4AF /* main */ = {
@@ -208,8 +210,7 @@
 				0985AF5A1DC0124A00FE3321 /* MarketViewController.swift */,
 				0985AF741DC036DD00FE3321 /* Market.storyboard */,
 			);
-			name = market;
-			path = components/market;
+			path = market;
 			sourceTree = "<group>";
 		};
 		09C0E5E71DA8537F0019E4AF /* cart */ = {
@@ -235,10 +236,11 @@
 			children = (
 				09463B7C1DC16C3000699737 /* Landing.storyboard */,
 				09463B7D1DC16C3000699737 /* LandingInterface.swift */,
+				09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */,
 				09463B7E1DC16C3000699737 /* LandingRouter.swift */,
 				09463B7F1DC16C3000699737 /* LandingViewController.swift */,
 			);
-			name = landing;
+			path = landing;
 			sourceTree = "<group>";
 		};
 		09C0E5EA1DA854F10019E4AF /* login */ = {
@@ -415,6 +417,7 @@
 				0985AF6F1DC02C3000FE3321 /* Cart.swift in Sources */,
 				09463B821DC16C3000699737 /* LandingRouter.swift in Sources */,
 				0985AF841DC040E000FE3321 /* MainRouter.swift in Sources */,
+				09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */,
 				09463B7B1DC16AEE00699737 /* AuthenticateViewController.swift in Sources */,
 				0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */,
 				0985AF671DC0250100FE3321 /* AppStore.swift in Sources */,
