@@ -9,30 +9,32 @@
 import Foundation
 import ReSwiftRouter
 
-class MarketRouter: Routable {
+extension Market {
+    class Router: Routable {
 
-    func changeRouteSegment(_ from: RouteElementIdentifier,
-                            to: RouteElementIdentifier,
-                            animated: Bool,
-                            completionHandler: RoutingCompletionHandler) -> Routable {
+        func changeRouteSegment(_ from: RouteElementIdentifier,
+                                to: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: RoutingCompletionHandler) -> Routable {
 
-        completionHandler()
-        return self
-    }
+            completionHandler()
+            return self
+        }
 
-    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                          animated: Bool,
-                          completionHandler: RoutingCompletionHandler) -> Routable {
+        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                              animated: Bool,
+                              completionHandler: RoutingCompletionHandler) -> Routable {
 
-        completionHandler()
-        return self
-    }
+            completionHandler()
+            return self
+        }
 
-    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                         animated: Bool,
-                         completionHandler: RoutingCompletionHandler) {
+        func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                             animated: Bool,
+                             completionHandler: RoutingCompletionHandler) {
 
-        completionHandler()
+            completionHandler()
+        }
     }
 }
 

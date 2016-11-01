@@ -14,7 +14,7 @@ enum Market: ComponentInterface {
     static var identifier = "Market"
 
     static func newComponent() -> Component {
-        let router = MarketRouter()
+        let router = Market.Router()
         let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! MarketViewController
         let navController = UINavigationController(rootViewController: viewController)
         return BasicComponent(router: router, rootViewController: navController)
