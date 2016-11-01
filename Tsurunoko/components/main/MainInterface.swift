@@ -18,10 +18,9 @@ enum Main: ComponentInterface {
 
         let market = Market.newComponent()
         let cart = Cart.newComponent()
-        // TODO: <ARLO> put these in navigation controllers so you can tell them apart
+
         let mainViewController = MainViewController()
         mainViewController.viewControllers = [market.rootViewController, cart.rootViewController]
-        // TODO: <ARLO> add tab bar buttons
 
         let routeMap = [
             Market.identifier: market,
