@@ -14,7 +14,7 @@ class LandingRouter: Routable {
     func changeRouteSegment(_ from: RouteElementIdentifier,
                             to: RouteElementIdentifier,
                             animated: Bool,
-                            completionHandler: RoutingCompletionHandler) -> Routable {
+                            completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         completionHandler()
         return self
@@ -22,7 +22,7 @@ class LandingRouter: Routable {
 
     func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                           animated: Bool,
-                          completionHandler: RoutingCompletionHandler) -> Routable {
+                          completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         completionHandler()
         return self

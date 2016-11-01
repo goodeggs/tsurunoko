@@ -19,32 +19,24 @@ var mainStore = AppStore(
     ]
 )
 
+struct ApplicationDidFinishLaunching: Action {
+
+    let application: UIApplication
+    let launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var router: Router<AppState>!
-    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let rootComponent = Landing.newComponent()
-
-        router = Router(store: mainStore, rootRoutable: rootComponent.router) { state in
+        router = Router(store: mainStore, rootRoutable: LaunchRouter()) { state in
             state.navigationState
         }
 
-        // TODO: <ARLO> does this event need to be fired or could the navigation state default to Main? 
-        mainStore.dispatch { state, store in
-            if state.navigationState.route == [] {
-                return SetRouteAction([Main.identifier])
-            } else {
-                return nil
-            }
-        }
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = rootComponent.rootViewController
-        window?.makeKeyAndVisible()
+        mainStore.dispatch(ApplicationDidFinishLaunching(application: application, launchOptions: launchOptions))
 
         return true
     }

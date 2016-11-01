@@ -9,6 +9,9 @@
 import Foundation
 import ReSwift
 import ReSwiftRouter
+import Then
+
+extension NavigationState: Then {}
 
 typealias AppStore = Store<AppState>
 
@@ -33,21 +36,33 @@ struct AppState: StateType, HasNavigationState {
 struct AppReducer: Reducer {
 
     func handleAction(action: Action, state: AppState?) -> AppState {
-        let navigationState: NavigationState
-        if state == nil {
-            navigationState = NavigationState()
-        } else {
-            navigationState = NavigationReducer.handleAction(action, state: state?.navigationState)
-        }
         let market = Model.Market(id: "", productGroupIDs: [])
         return AppState(
-            navigationState: navigationState,
+            navigationState: NavReducer.handleAction(action, state: state),
             market: market,
             productGroups: [],
             products: [],
             producers: [],
             authenticated: false
         )
+    }
+}
+
+enum NavReducer {
+
+    static func handleAction(_ action: Action, state optState: AppState?) -> NavigationState {
+        guard let state = optState else {
+            return NavigationState()
+        }
+
+        guard action is ApplicationDidFinishLaunching else {
+            return NavigationReducer.handleAction(action, state: state.navigationState)
+        }
+
+        let initialRouteIdentifier = state.authenticated ? Main.identifier : Landing.identifier
+        return state.navigationState.with {
+            $0.route.append(initialRouteIdentifier)
+        }
     }
 }
 

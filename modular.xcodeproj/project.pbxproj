@@ -37,6 +37,8 @@
 		0985AF881DC05BF100FE3321 /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF871DC05BF100FE3321 /* CartRouter.swift */; };
 		09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
+		09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EA66021DC1820A0019FD0D /* Launch.storyboard */; };
+		09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA66061DC1854B0019FD0D /* LaunchRouter.swift */; };
 		D96ED2ADC69F1161B36196A9 /* Pods_modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEBABD137198392F18EFA5 /* Pods_modular.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C0E5DC1DA84EF60019E4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09EA66021DC1820A0019FD0D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		09EA66061DC1854B0019FD0D /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.release.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.release.xcconfig"; sourceTree = "<group>"; };
 		90DEBABD137198392F18EFA5 /* Pods_modular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB36D5FAB87BDFB52A97E865 /* Pods-modular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.debug.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				09463B731DC1696000699737 /* authenticate */,
 				09C0E5E71DA8537F0019E4AF /* cart */,
 				09C0E5E91DA854E90019E4AF /* landing */,
+				09EA66011DC181960019FD0D /* launch */,
 				09C0E5EA1DA854F10019E4AF /* login */,
 				09C0E5E51DA8536F0019E4AF /* main */,
 				09C0E5E61DA853750019E4AF /* market */,
@@ -251,6 +256,15 @@
 			path = store;
 			sourceTree = "<group>";
 		};
+		09EA66011DC181960019FD0D /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				09EA66021DC1820A0019FD0D /* Launch.storyboard */,
+				09EA66061DC1854B0019FD0D /* LaunchRouter.swift */,
+			);
+			path = launch;
+			sourceTree = "<group>";
+		};
 		51D1241762B4FFDD881789C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Arlo Armstrong";
 				TargetAttributes = {
 					09C0E5CA1DA84EF60019E4AF = {
@@ -335,6 +349,7 @@
 				09463B781DC16AEE00699737 /* Authenticate.storyboard in Resources */,
 				0985AF751DC036DD00FE3321 /* Market.storyboard in Resources */,
 				09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */,
+				09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */,
 				0985AF5B1DC0124A00FE3321 /* MarketViewController.swift in Sources */,
 				0985AF7E1DC0394E00FE3321 /* Component.swift in Sources */,
 				09463B811DC16C3000699737 /* LandingInterface.swift in Sources */,
@@ -442,6 +458,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -492,6 +509,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -521,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB36D5FAB87BDFB52A97E865 /* Pods-modular.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = modular/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -534,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = modular/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

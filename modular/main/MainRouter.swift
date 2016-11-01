@@ -21,19 +21,17 @@ class MainRouter: NSObject, Routable {
         self.routeMap = routeMap
     }
 
-    func changeRouteSegment(
-        _ from: RouteElementIdentifier,
-        to: RouteElementIdentifier,
-        animated: Bool,
-        completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+    func changeRouteSegment(_ from: RouteElementIdentifier,
+                            to: RouteElementIdentifier,
+                            animated: Bool,
+                            completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         return selectTab(for: to, animated: animated, completionHandler: completionHandler)
     }
 
-    func pushRouteSegment(
-        _ routeElementIdentifier: RouteElementIdentifier,
-        animated: Bool,
-        completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                          animated: Bool,
+                          completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         return selectTab(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
     }
