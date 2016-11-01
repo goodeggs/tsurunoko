@@ -10,70 +10,73 @@ import Foundation
 import UIKit
 import ReSwiftRouter
 
-// NSObject in order to conform to UITabBarControllerDelegate
-class MainRouter: NSObject, Routable {
+extension Main {
 
-    let mainViewController: MainViewController
-    let routeMap: [RouteElementIdentifier: Component]
+    // NSObject in order to conform to UITabBarControllerDelegate
+    final class Router: NSObject, Routable {
 
-    init(mainViewController: MainViewController, routeMap: [RouteElementIdentifier: Component]) {
-        self.mainViewController = mainViewController
-        self.routeMap = routeMap
-    }
+        let mainViewController: MainViewController
+        let routeMap: [RouteElementIdentifier: Component]
 
-    func changeRouteSegment(_ from: RouteElementIdentifier,
-                            to: RouteElementIdentifier,
-                            animated: Bool,
-                            completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-
-        return selectTab(for: to, animated: animated, completionHandler: completionHandler)
-    }
-
-    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                          animated: Bool,
-                          completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-
-        return selectTab(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
-    }
-
-    func selectTab(for route: RouteElementIdentifier,
-                   animated: Bool,
-                   completionHandler: RoutingCompletionHandler) -> Routable {
-
-        defer {
-            completionHandler()
+        init(mainViewController: MainViewController, routeMap: [RouteElementIdentifier: Component]) {
+            self.mainViewController = mainViewController
+            self.routeMap = routeMap
         }
 
-        guard route != Main.identifier else {
-            return self
+        func changeRouteSegment(_ from: RouteElementIdentifier,
+                                to: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            return selectTab(for: to, animated: animated, completionHandler: completionHandler)
         }
 
-        guard let component = routeMap[route] else {
-            fatalError("Unable to handle route to '\(route)'.")
+        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                              animated: Bool,
+                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            return selectTab(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
         }
 
-        guard let tabViewControllers = mainViewController.viewControllers,
-            let index = tabViewControllers.index(of: component.rootViewController) else {
-                fatalError("Unable to find view controller from routeMap in tab bar.")
-        }
+        func selectTab(for route: RouteElementIdentifier,
+                       animated: Bool,
+                       completionHandler: RoutingCompletionHandler) -> Routable {
 
-        mainViewController.selectedIndex = index
-        return component.router
+            defer {
+                completionHandler()
+            }
+
+            guard route != Main.identifier else {
+                return self
+            }
+
+            guard let component = routeMap[route] else {
+                fatalError("Unable to handle route to '\(route)'.")
+            }
+
+            guard let tabViewControllers = mainViewController.viewControllers,
+                let index = tabViewControllers.index(of: component.rootViewController) else {
+                    fatalError("Unable to find view controller from routeMap in tab bar.")
+            }
+
+            mainViewController.selectedIndex = index
+            return component.router
+        }
     }
 }
 
-extension MainRouter: Component {
+extension Main.Router: Component {
 
     var rootViewController: UIViewController {
         return mainViewController
     }
-    
+
     var router: Routable {
         return self
     }
 }
 
-extension MainRouter: UITabBarControllerDelegate {
+extension Main.Router: UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController,
                           shouldSelect viewController: UIViewController) -> Bool {

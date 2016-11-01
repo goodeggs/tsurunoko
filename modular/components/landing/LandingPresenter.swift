@@ -16,7 +16,7 @@ protocol LandingPresenter {
 
 extension Landing {
 
-    class PresenterImpl: LandingPresenter {
+    struct PresenterImpl: LandingPresenter {
 
         func showAuthenticationModal() {
             mainStore.dispatch(SetRouteAction([Landing.identifier, Authenticate.identifier])) // TODO: <ARLO> would like to push route here

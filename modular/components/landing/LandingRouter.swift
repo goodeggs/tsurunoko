@@ -11,7 +11,7 @@ import ReSwiftRouter
 
 extension Landing {
 
-    class Router: Routable {
+    final class Router: Routable {
 
         let viewController: UIViewController
 

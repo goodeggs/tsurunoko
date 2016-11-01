@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LandingViewController: UIViewController {
+final class LandingViewController: UIViewController {
 
     var presenter: LandingPresenter!
 

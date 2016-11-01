@@ -32,7 +32,7 @@ enum Landing: ComponentInterface {
         let presenter = self.presenter()
         let viewController = self.viewController(presenter: presenter)
         let router = self.router(viewController: viewController)
-        return ComponentImpl(router: router, rootViewController: viewController)
+        return BasicComponent(router: router, rootViewController: viewController)
     }
 }
 

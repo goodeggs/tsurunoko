@@ -9,30 +9,63 @@
 import Foundation
 import ReSwiftRouter
 
-class AuthenticateRouter: Routable {
+extension Authenticate {
 
-    func changeRouteSegment(_ from: RouteElementIdentifier,
-                            to: RouteElementIdentifier,
-                            animated: Bool,
-                            completionHandler: RoutingCompletionHandler) -> Routable {
+    class Router: Routable {
 
-        completionHandler()
-        return self
-    }
+        let viewController: UIViewController
 
-    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                          animated: Bool,
-                          completionHandler: RoutingCompletionHandler) -> Routable {
+        init(viewController: UIViewController) {
+            self.viewController = viewController
+        }
 
-        completionHandler()
-        return self
-    }
+        enum ValidRoute: String {
+            case Authenticate
+        }
 
-    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                         animated: Bool,
-                         completionHandler: RoutingCompletionHandler) {
+        func changeRouteSegment(_ from: RouteElementIdentifier,
+                                to: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
-        completionHandler()
+            return showViewController(for: to, animated: animated, completionHandler: completionHandler)
+        }
+
+        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                              animated: Bool,
+                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            return showViewController(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
+        }
+
+        func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                             animated: Bool,
+                             completionHandler: @escaping RoutingCompletionHandler) {
+            // TODO: <ARLO> handle cancelling the modal
+        }
+
+        func showViewController(for routeIdentifier: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: RoutingCompletionHandler) -> Routable {
+
+            guard let route = ValidRoute(rawValue: routeIdentifier) else {
+                fatalError("Unexpected routeIdentifier \(routeIdentifier).")
+            }
+
+            defer {
+                completionHandler()
+            }
+
+            let component: Component
+            switch route {
+            case .Authenticate:
+                component = Authenticate.newComponent()
+            }
+
+            self.viewController.present(component.rootViewController, animated: true, completion: nil)
+            
+            return component.router
+        }
     }
 }
 

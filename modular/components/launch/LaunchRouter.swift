@@ -9,7 +9,7 @@
 import Foundation
 import ReSwiftRouter
 
-class LaunchRouter: Routable {
+final class LaunchRouter: Routable {
 
     lazy var window: UIWindow = {
         return UIWindow(frame: UIScreen.main.bounds)

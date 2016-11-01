@@ -27,7 +27,7 @@ enum Main: ComponentInterface {
             Market.identifier: market,
             Cart.identifier: cart
         ]
-        let router = MainRouter(mainViewController: mainViewController, routeMap: routeMap)
+        let router = Main.Router(mainViewController: mainViewController, routeMap: routeMap)
 
         mainViewController.delegate = router
         

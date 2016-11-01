@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AuthenticateViewController: UIViewController {
+final class AuthenticateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

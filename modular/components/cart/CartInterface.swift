@@ -17,7 +17,7 @@ enum Cart: ComponentInterface {
         let router = CartRouter()
         let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! CartViewController
         let navController = UINavigationController(rootViewController: viewController)
-        return ComponentImpl(router: router, rootViewController: navController)
+        return BasicComponent(router: router, rootViewController: navController)
     }
 }
 

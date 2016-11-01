@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09463B781DC16AEE00699737 /* Authenticate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09463B741DC16AEE00699737 /* Authenticate.storyboard */; };
 		09463B791DC16AEE00699737 /* AuthenticateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B751DC16AEE00699737 /* AuthenticateInterface.swift */; };
 		09463B7A1DC16AEE00699737 /* AuthenticateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B761DC16AEE00699737 /* AuthenticateRouter.swift */; };
 		09463B7B1DC16AEE00699737 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B771DC16AEE00699737 /* AuthenticateViewController.swift */; };
@@ -38,13 +37,13 @@
 		09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E5CE1DA84EF60019E4AF /* AppDelegate.swift */; };
 		09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0E5D71DA84EF60019E4AF /* Assets.xcassets */; };
 		09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */; };
+		09E1AEC61DC840D900551E63 /* AuthenticatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */; };
 		09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EA66021DC1820A0019FD0D /* Launch.storyboard */; };
 		09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA66061DC1854B0019FD0D /* LaunchRouter.swift */; };
 		D96ED2ADC69F1161B36196A9 /* Pods_modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEBABD137198392F18EFA5 /* Pods_modular.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		09463B741DC16AEE00699737 /* Authenticate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authenticate.storyboard; sourceTree = "<group>"; };
 		09463B751DC16AEE00699737 /* AuthenticateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateInterface.swift; sourceTree = "<group>"; };
 		09463B761DC16AEE00699737 /* AuthenticateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateRouter.swift; sourceTree = "<group>"; };
 		09463B771DC16AEE00699737 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		09C0E5D71DA84EF60019E4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C0E5DC1DA84EF60019E4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
+		09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatePresenter.swift; sourceTree = "<group>"; };
 		09EA66021DC1820A0019FD0D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		09EA66061DC1854B0019FD0D /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.release.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		09463B731DC1696000699737 /* authenticate */ = {
 			isa = PBXGroup;
 			children = (
-				09463B741DC16AEE00699737 /* Authenticate.storyboard */,
 				09463B751DC16AEE00699737 /* AuthenticateInterface.swift */,
+				09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */,
 				09463B761DC16AEE00699737 /* AuthenticateRouter.swift */,
 				09463B771DC16AEE00699737 /* AuthenticateViewController.swift */,
 			);
@@ -348,7 +348,6 @@
 			files = (
 				0985AF771DC038FC00FE3321 /* Cart.storyboard in Resources */,
 				09463B801DC16C3000699737 /* Landing.storyboard in Resources */,
-				09463B781DC16AEE00699737 /* Authenticate.storyboard in Resources */,
 				0985AF751DC036DD00FE3321 /* Market.storyboard in Resources */,
 				09C0E5D81DA84EF60019E4AF /* Assets.xcassets in Resources */,
 				09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */,
@@ -411,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */,
+				09E1AEC61DC840D900551E63 /* AuthenticatePresenter.swift in Sources */,
 				0985AF5B1DC0124A00FE3321 /* MarketViewController.swift in Sources */,
 				0985AF7E1DC0394E00FE3321 /* Component.swift in Sources */,
 				09463B811DC16C3000699737 /* LandingInterface.swift in Sources */,
