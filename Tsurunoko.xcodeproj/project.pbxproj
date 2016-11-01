@@ -184,7 +184,6 @@
 				09C0E5E71DA8537F0019E4AF /* cart */,
 				09C0E5E91DA854E90019E4AF /* landing */,
 				09EA66011DC181960019FD0D /* launch */,
-				09C0E5EA1DA854F10019E4AF /* login */,
 				09C0E5E51DA8536F0019E4AF /* main */,
 				09C0E5E61DA853750019E4AF /* market */,
 				0985AF611DC0178700FE3321 /* product */,
@@ -241,13 +240,6 @@
 				09463B7F1DC16C3000699737 /* LandingViewController.swift */,
 			);
 			path = landing;
-			sourceTree = "<group>";
-		};
-		09C0E5EA1DA854F10019E4AF /* login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = login;
 			sourceTree = "<group>";
 		};
 		09C0E5EB1DA855360019E4AF /* store */ = {
