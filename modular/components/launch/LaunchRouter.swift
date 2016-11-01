@@ -34,6 +34,12 @@ final class LaunchRouter: Routable {
         return showViewController(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
     }
 
+    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                         animated: Bool,
+                         completionHandler: @escaping RoutingCompletionHandler) {
+        completionHandler() // called when switching between landing and main, nothing to do here
+    }
+
     func showViewController(for routeIdentifier: RouteElementIdentifier,
                             animated: Bool,
                             completionHandler: RoutingCompletionHandler) -> Routable {

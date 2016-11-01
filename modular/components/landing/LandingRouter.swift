@@ -41,7 +41,7 @@ extension Landing {
         func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                              animated: Bool,
                              completionHandler: @escaping RoutingCompletionHandler) {
-            // TODO: <ARLO> handle cancelling the modal
+            completionHandler() // UIKit dismisses the alert automatically
         }
 
         func showViewController(for routeIdentifier: RouteElementIdentifier,

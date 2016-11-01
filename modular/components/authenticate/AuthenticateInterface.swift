@@ -24,28 +24,19 @@ enum Authenticate: ComponentInterface {
         let alertController = UIAlertController(title: "Hello", message: "Confirm your identity!", preferredStyle: .alert)
         alertController.addAction(denyAction)
         alertController.addAction(confirmAction)
+        alertController.preferredAction = confirmAction
         return alertController
     }
 
     private static func router(viewController: UIViewController) -> Routable {
-        return Authenticate.Router(viewController: viewController)
+        return Authenticate.Router()
     }
 
     static func newComponent() -> Component {
         let presenter = self.presenter()
         let viewController = self.viewController(presenter: presenter)
         let router = self.router(viewController: viewController)
-        return AuthenticateComponent(router: router, rootViewController: viewController, presenter: presenter)
-    }
-}
-
-final class AuthenticateComponent: BasicComponent {
-
-    let presenter: AuthenticatePresenter
-
-    init(router: Routable, rootViewController: UIViewController, presenter: AuthenticatePresenter) {
-        self.presenter = presenter
-        super.init(router: router, rootViewController: rootViewController)
+        return PresenterComponent(router: router, rootViewController: viewController, presenter: presenter)
     }
 }
 

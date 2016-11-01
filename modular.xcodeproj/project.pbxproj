@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		09463B791DC16AEE00699737 /* AuthenticateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B751DC16AEE00699737 /* AuthenticateInterface.swift */; };
-		09463B7A1DC16AEE00699737 /* AuthenticateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B761DC16AEE00699737 /* AuthenticateRouter.swift */; };
 		09463B7B1DC16AEE00699737 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B771DC16AEE00699737 /* AuthenticateViewController.swift */; };
 		09463B801DC16C3000699737 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09463B7C1DC16C3000699737 /* Landing.storyboard */; };
 		09463B811DC16C3000699737 /* LandingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B7D1DC16C3000699737 /* LandingInterface.swift */; };
@@ -40,12 +39,12 @@
 		09E1AEC61DC840D900551E63 /* AuthenticatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */; };
 		09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EA66021DC1820A0019FD0D /* Launch.storyboard */; };
 		09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA66061DC1854B0019FD0D /* LaunchRouter.swift */; };
+		09F166C01DC84B94008ECA7A /* AuthenticateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F166BF1DC84B94008ECA7A /* AuthenticateRouter.swift */; };
 		D96ED2ADC69F1161B36196A9 /* Pods_modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DEBABD137198392F18EFA5 /* Pods_modular.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09463B751DC16AEE00699737 /* AuthenticateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateInterface.swift; sourceTree = "<group>"; };
-		09463B761DC16AEE00699737 /* AuthenticateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateRouter.swift; sourceTree = "<group>"; };
 		09463B771DC16AEE00699737 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
 		09463B7C1DC16C3000699737 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		09463B7D1DC16C3000699737 /* LandingInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingInterface.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatePresenter.swift; sourceTree = "<group>"; };
 		09EA66021DC1820A0019FD0D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		09EA66061DC1854B0019FD0D /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
+		09F166BF1DC84B94008ECA7A /* AuthenticateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateRouter.swift; sourceTree = "<group>"; };
 		40C2EC508E75961A8F4D1EDF /* Pods-modular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.release.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.release.xcconfig"; sourceTree = "<group>"; };
 		90DEBABD137198392F18EFA5 /* Pods_modular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_modular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB36D5FAB87BDFB52A97E865 /* Pods-modular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-modular.debug.xcconfig"; path = "Pods/Target Support Files/Pods-modular/Pods-modular.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			children = (
 				09463B751DC16AEE00699737 /* AuthenticateInterface.swift */,
 				09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */,
-				09463B761DC16AEE00699737 /* AuthenticateRouter.swift */,
+				09F166BF1DC84B94008ECA7A /* AuthenticateRouter.swift */,
 				09463B771DC16AEE00699737 /* AuthenticateViewController.swift */,
 			);
 			path = authenticate;
@@ -424,6 +424,7 @@
 				0985AF6B1DC026C900FE3321 /* Market.swift in Sources */,
 				0985AF791DC0391900FE3321 /* CartInterface.swift in Sources */,
 				0985AF821DC03AA200FE3321 /* MainViewController.swift in Sources */,
+				09F166C01DC84B94008ECA7A /* AuthenticateRouter.swift in Sources */,
 				0985AF7B1DC0392600FE3321 /* CartViewController.swift in Sources */,
 				09463B791DC16AEE00699737 /* AuthenticateInterface.swift in Sources */,
 				0985AF711DC02C6700FE3321 /* Address.swift in Sources */,
@@ -431,7 +432,6 @@
 				0985AF801DC03A3A00FE3321 /* MainInterface.swift in Sources */,
 				0985AF6D1DC0281C00FE3321 /* User.swift in Sources */,
 				09463B831DC16C3000699737 /* LandingViewController.swift in Sources */,
-				09463B7A1DC16AEE00699737 /* AuthenticateRouter.swift in Sources */,
 				0985AF881DC05BF100FE3321 /* CartRouter.swift in Sources */,
 				0985AF691DC0256D00FE3321 /* Model.swift in Sources */,
 				09C0E5CF1DA84EF60019E4AF /* AppDelegate.swift in Sources */,

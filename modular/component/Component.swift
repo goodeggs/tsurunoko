@@ -35,3 +35,13 @@ class BasicComponent: Component {
     }
 }
 
+final class PresenterComponent<P>: BasicComponent {
+
+    let presenter: P
+
+    init(router: Routable, rootViewController: UIViewController, presenter: P) {
+        self.presenter = presenter
+        super.init(router: router, rootViewController: rootViewController)
+    }
+}
+
