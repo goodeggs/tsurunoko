@@ -19,11 +19,11 @@ enum Authenticate: ComponentInterface {
     }
 
     private static func viewController(presenter: AuthenticatePresenter) -> UIViewController {
+        let denyAction = UIAlertAction(title: "Deny", style: .cancel, handler: { (_) in presenter.didCancel() })
         let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: { (_) in presenter.didAuthenticate() })
-        let denyAction = UIAlertAction(title: "Deny", style: .default, handler: { (_) in presenter.didCancel() })
         let alertController = UIAlertController(title: "Hello", message: "Confirm your identity!", preferredStyle: .alert)
-        alertController.addAction(confirmAction)
         alertController.addAction(denyAction)
+        alertController.addAction(confirmAction)
         return alertController
     }
 
