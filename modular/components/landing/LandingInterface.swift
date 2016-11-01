@@ -21,7 +21,7 @@ enum Landing: ComponentInterface {
     private static func viewController(presenter: LandingPresenter) -> UIViewController {
         let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! LandingViewController
         viewController.presenter = presenter
-        return UINavigationController(rootViewController: viewController)
+        return viewController
     }
 
     private static func router(viewController: UIViewController) -> Routable {
