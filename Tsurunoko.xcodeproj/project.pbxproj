@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		09463B791DC16AEE00699737 /* AuthenticateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B751DC16AEE00699737 /* AuthenticateInterface.swift */; };
-		09463B7B1DC16AEE00699737 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B771DC16AEE00699737 /* AuthenticateViewController.swift */; };
 		09463B801DC16C3000699737 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09463B7C1DC16C3000699737 /* Landing.storyboard */; };
 		09463B811DC16C3000699737 /* LandingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B7D1DC16C3000699737 /* LandingInterface.swift */; };
 		09463B821DC16C3000699737 /* LandingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09463B7E1DC16C3000699737 /* LandingRouter.swift */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		09463B751DC16AEE00699737 /* AuthenticateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateInterface.swift; sourceTree = "<group>"; };
-		09463B771DC16AEE00699737 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
 		09463B7C1DC16C3000699737 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		09463B7D1DC16C3000699737 /* LandingInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingInterface.swift; sourceTree = "<group>"; };
 		09463B7E1DC16C3000699737 /* LandingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingRouter.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				09463B751DC16AEE00699737 /* AuthenticateInterface.swift */,
 				09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */,
 				09F166BF1DC84B94008ECA7A /* AuthenticateRouter.swift */,
-				09463B771DC16AEE00699737 /* AuthenticateViewController.swift */,
 			);
 			path = authenticate;
 			sourceTree = "<group>";
@@ -421,7 +418,6 @@
 				0985AF841DC040E000FE3321 /* MainRouter.swift in Sources */,
 				09D328991DC93E8B00F3D767 /* MarketPresenter.swift in Sources */,
 				09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */,
-				09463B7B1DC16AEE00699737 /* AuthenticateViewController.swift in Sources */,
 				0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */,
 				0985AF671DC0250100FE3321 /* AppStore.swift in Sources */,
 				0985AF6B1DC026C900FE3321 /* Market.swift in Sources */,
