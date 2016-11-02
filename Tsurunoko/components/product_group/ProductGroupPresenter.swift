@@ -15,6 +15,7 @@ protocol ProductGroupPresenter {
     func subscribe()
     func unsubscribe()
     func showProduct(with identifier: String)
+    func willPopView()
 }
 
 protocol ProductGroupView: class {
@@ -28,10 +29,10 @@ extension ProductGroup {
 
         let store: AppStore
         weak var view: ProductGroupView?
-        lazy var productGroupID: Model.ProductGroup.ID = {
+        var productGroupID: Model.ProductGroup.ID? {
             let route = self.store.state.navigationState.route
-            return self.store.state.navigationState.getRouteSpecificState(route)!
-        }()
+            return self.store.state.navigationState.getRouteSpecificState(route)
+        }
 
         init(store: AppStore, view: ProductGroupView) {
             self.store = store
@@ -49,12 +50,13 @@ extension ProductGroup {
         // MARK: - StoreSubscriber
 
         func newState(state: Catalog) {
-            guard let view = self.view else {
+            guard let view = self.view,
+                let productGroupID = self.productGroupID else {
                 return
             }
 
-            guard let productGroup = state.productGroups.first(where: { self.productGroupID == $0.identifier }) else {
-                fatalError("unable to find product group with identifier: \(self.productGroupID)")
+            guard let productGroup = state.productGroups.first(where: { productGroupID == $0.identifier }) else {
+                fatalError("unable to find product group with identifier: \(productGroupID)")
             }
 
             let cellViewModels = productGroup.productIDs.map({ (productID) -> Model.Product in
@@ -71,6 +73,12 @@ extension ProductGroup {
 
         func showProduct(with identifier: String) {
 
+        }
+
+        func willPopView() {
+            var route = self.store.state.navigationState.route
+            _ = route.popLast()
+            self.store.dispatch(SetRouteAction(route))
         }
     }
 }

@@ -30,6 +30,14 @@ final class ProductGroupViewController: UITableViewController {
 
         self.presenter.unsubscribe()
     }
+
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
+
+        if parent == nil {
+            self.presenter.willPopView()
+        }
+    }
 }
 
 // MARK: - ProductGroupView
