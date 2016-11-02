@@ -16,10 +16,10 @@ extension Main {
     final class Router: NSObject, Routable {
 
         let store: AppStore
-        let viewController: MainViewController
+        let viewController: UITabBarController
         let routeMap: RouteMap
 
-        init(store: AppStore, viewController: MainViewController, routeMap: RouteMap) {
+        init(store: AppStore, viewController: UITabBarController, routeMap: RouteMap) {
             self.store = store
             self.viewController = viewController
             self.routeMap = routeMap
