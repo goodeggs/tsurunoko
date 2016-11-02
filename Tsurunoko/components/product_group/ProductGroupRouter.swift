@@ -11,7 +11,7 @@ import ReSwiftRouter
 
 extension ProductGroup {
     
-    class Router: Routable {
+    final class Router: Routable {
 
         func changeRouteSegment(_ from: RouteElementIdentifier,
                                 to: RouteElementIdentifier,

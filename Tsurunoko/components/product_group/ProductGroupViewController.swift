@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProductGroupViewController: UITableViewController {
+final class ProductGroupViewController: UITableViewController {
 
     var presenter: ProductGroupPresenter!
     var viewModel: ProductGroup.ViewModel = ProductGroup.ViewModel(cellViewModels: [])

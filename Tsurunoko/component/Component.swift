@@ -24,7 +24,7 @@ protocol Component {
     var viewController: UIViewController { get }
 }
 
-class BasicComponent: Component {
+final class BasicComponent: Component {
 
     var router: Routable
     var viewController: UIViewController

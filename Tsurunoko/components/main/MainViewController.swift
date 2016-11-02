@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainViewController: UITabBarController {
+final class MainViewController: UITabBarController {
 
     var presenter: MainPresenter!
 

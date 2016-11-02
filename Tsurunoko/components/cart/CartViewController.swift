@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CartViewController: UITableViewController {
+final class CartViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

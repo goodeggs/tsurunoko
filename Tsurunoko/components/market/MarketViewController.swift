@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MarketViewController: UITableViewController {
+final class MarketViewController: UITableViewController {
 
     var presenter: MarketPresenter!
     var viewModel: Market.ViewModel = Market.ViewModel(cellViewModels: [])

@@ -9,7 +9,7 @@
 import Foundation
 import ReSwiftRouter
 
-class CartRouter: Routable {
+final class CartRouter: Routable {
 
     func changeRouteSegment(_ from: RouteElementIdentifier,
                             to: RouteElementIdentifier,
