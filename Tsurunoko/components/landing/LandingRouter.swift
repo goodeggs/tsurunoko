@@ -49,6 +49,7 @@ extension Landing {
         func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                              animated: Bool,
                              completionHandler: @escaping RoutingCompletionHandler) {
+
             completionHandler() // UIKit dismisses the alert automatically
         }
 
