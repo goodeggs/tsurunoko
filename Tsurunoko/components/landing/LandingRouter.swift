@@ -27,10 +27,6 @@ extension Landing {
             self.viewController = viewController
         }
 
-        enum ValidRoute: String {
-            case Authenticate
-        }
-
         func changeRouteSegment(_ from: RouteElementIdentifier,
                                 to: RouteElementIdentifier,
                                 animated: Bool,
