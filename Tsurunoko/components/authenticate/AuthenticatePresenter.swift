@@ -23,7 +23,7 @@ extension Authenticate {
 
         func didAuthenticate() {
             self.store.dispatch(DidAuthenticate())
-            self.store.dispatch(SetRouteAction([Main.identifier]))
+            self.store.dispatch(SetRouteAction([Main.identifier, Market.identifier]))
         }
 
         func didCancel() {
