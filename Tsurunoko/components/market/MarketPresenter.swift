@@ -11,6 +11,8 @@ import ReSwift
 
 protocol MarketPresenter {
 
+    func subscribe()
+    func unsubscribe()
     func showProduct(with identifier: Model.Product.ID)
 }
 
@@ -26,10 +28,23 @@ extension Market {
             self.viewController = viewController
         }
 
+        func subscribe() {
+            self.store.subscribe(self)
+        }
+
+        func unsubscribe() {
+            self.store.unsubscribe(self)
+        }
+
         // MARK: - StoreSubscriber
 
         func newState(state: AppState) {
-            let viewModel = Market.ViewModel()
+            let cellViewModels = state.market.productGroupIDs.map({ (productGroupID) -> Model.ProductGroup in
+                return state.productGroups.first(where: { productGroupID == $0.identifier })!
+            }).map { (productGroup) -> CellViewModel in
+                return CellViewModel(title: productGroup.name, detail: "\(productGroup.productIDs.count) items")
+            }
+            let viewModel = Market.ViewModel(cellViewModels: cellViewModels)
             self.viewController?.render(viewModel: viewModel)
         }
 

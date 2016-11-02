@@ -12,6 +12,13 @@ extension Market {
 
     struct ViewModel {
 
+        let cellViewModels: [CellViewModel]
+    }
+
+    struct CellViewModel {
+
+        let title: String
+        let detail: String
     }
 }
 

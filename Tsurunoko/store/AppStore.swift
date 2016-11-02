@@ -40,9 +40,9 @@ struct AppReducer: Reducer {
         return AppState(
             navigationState: NavReducer.handleAction(action, state: state),
             market: market,
-            productGroups: [],
-            products: [],
-            producers: [],
+            productGroups: [Model.ProductGroup.demoCheese(), Model.ProductGroup.demoMeat()],
+            products: Model.Product.demoCheeses() + Model.Product.demoMeats(),
+            producers: [Model.Producer.cheeser(), Model.Producer.cheesey(), Model.Producer.meater(), Model.Producer.fishey()],
             authenticated: false
         )
     }
