@@ -36,7 +36,7 @@ struct AppState: StateType, HasNavigationState {
 struct AppReducer: Reducer {
 
     func handleAction(action: Action, state: AppState?) -> AppState {
-        let market = Model.Market(id: "", productGroupIDs: [])
+        let market = Model.Market.demo()
         return AppState(
             navigationState: NavReducer.handleAction(action, state: state),
             market: market,
