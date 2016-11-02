@@ -48,10 +48,6 @@ extension Main {
                 completionHandler()
             }
 
-            guard route != Main.identifier else {
-                return self
-            }
-
             guard let component = routeMap[route] else {
                 fatalError("Unable to handle route to '\(route)'.")
             }
