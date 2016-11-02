@@ -12,7 +12,7 @@ import UIKit
 final class MarketViewController: UITableViewController {
 
     var presenter: MarketPresenter!
-    var viewModel: Market.ViewModel = Market.ViewModel(cellViewModels: [])
+    var viewModel = Market.ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

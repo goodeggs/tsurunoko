@@ -12,7 +12,7 @@ import UIKit
 final class ProductGroupViewController: UITableViewController {
 
     var presenter: ProductGroupPresenter!
-    var viewModel: ProductGroup.ViewModel = ProductGroup.ViewModel(cellViewModels: [])
+    var viewModel = ProductGroup.ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

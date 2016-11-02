@@ -23,3 +23,10 @@ extension Market {
     }
 }
 
+extension Market.ViewModel {
+
+    init() {
+        cellViewModels = []
+    }
+}
+

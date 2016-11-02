@@ -23,3 +23,11 @@ extension ProductGroup {
     }
 }
 
+extension ProductGroup.ViewModel {
+
+    init() {
+        title = ""
+        cellViewModels = []
+    }
+}
+
