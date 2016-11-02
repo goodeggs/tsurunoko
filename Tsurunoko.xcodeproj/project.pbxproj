@@ -18,7 +18,7 @@
 		0985AF601DC0168D00FE3321 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF5F1DC0168D00FE3321 /* Order.swift */; };
 		0985AF671DC0250100FE3321 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF661DC0250100FE3321 /* AppStore.swift */; };
 		0985AF691DC0256D00FE3321 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF681DC0256D00FE3321 /* Model.swift */; };
-		0985AF6B1DC026C900FE3321 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF6A1DC026C900FE3321 /* Market.swift */; };
+		0985AF6B1DC026C900FE3321 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF6A1DC026C900FE3321 /* Catalog.swift */; };
 		0985AF6D1DC0281C00FE3321 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF6C1DC0281C00FE3321 /* User.swift */; };
 		0985AF6F1DC02C3000FE3321 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF6E1DC02C3000FE3321 /* Cart.swift */; };
 		0985AF711DC02C6700FE3321 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985AF701DC02C6700FE3321 /* Address.swift */; };
@@ -57,7 +57,7 @@
 		0985AF5F1DC0168D00FE3321 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0985AF661DC0250100FE3321 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		0985AF681DC0256D00FE3321 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		0985AF6A1DC026C900FE3321 /* Market.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		0985AF6A1DC026C900FE3321 /* Catalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		0985AF6C1DC0281C00FE3321 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0985AF6E1DC02C3000FE3321 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		0985AF701DC02C6700FE3321 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			children = (
 				0985AF701DC02C6700FE3321 /* Address.swift */,
 				0985AF6E1DC02C3000FE3321 /* Cart.swift */,
-				0985AF6A1DC026C900FE3321 /* Market.swift */,
+				0985AF6A1DC026C900FE3321 /* Catalog.swift */,
 				0985AF681DC0256D00FE3321 /* Model.swift */,
 				0985AF5F1DC0168D00FE3321 /* Order.swift */,
 				0985AF721DC02C8000FE3321 /* PaymentMethod.swift */,
@@ -420,7 +420,7 @@
 				09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */,
 				0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */,
 				0985AF671DC0250100FE3321 /* AppStore.swift in Sources */,
-				0985AF6B1DC026C900FE3321 /* Market.swift in Sources */,
+				0985AF6B1DC026C900FE3321 /* Catalog.swift in Sources */,
 				0985AF791DC0391900FE3321 /* CartInterface.swift in Sources */,
 				0985AF821DC03AA200FE3321 /* MainViewController.swift in Sources */,
 				09F166C01DC84B94008ECA7A /* AuthenticateRouter.swift in Sources */,

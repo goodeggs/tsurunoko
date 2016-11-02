@@ -29,7 +29,7 @@ extension Market {
         }
 
         func subscribe() {
-            self.store.subscribe(self)
+            self.store.subscribe(self, selector: { return $0.catalog })
         }
 
         func unsubscribe() {
@@ -38,7 +38,7 @@ extension Market {
 
         // MARK: - StoreSubscriber
 
-        func newState(state: AppState) {
+        func newState(state: Catalog) {
             let cellViewModels = state.market.productGroupIDs.map({ (productGroupID) -> Model.ProductGroup in
                 return state.productGroups.first(where: { productGroupID == $0.identifier })!
             }).map { (productGroup) -> CellViewModel in

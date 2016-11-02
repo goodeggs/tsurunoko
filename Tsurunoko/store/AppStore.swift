@@ -21,10 +21,7 @@ struct AppState: StateType, HasNavigationState {
 
     var navigationState: NavigationState
 
-    let market: Model.Market
-    let productGroups: [Model.ProductGroup]
-    let products: [Model.Product]
-    let producers: [Model.Producer]
+    let catalog: Catalog
 
     let authenticated: Bool
 //    let user: Model.User
@@ -38,13 +35,9 @@ struct AppState: StateType, HasNavigationState {
 struct AppReducer: Reducer {
 
     func handleAction(action: Action, state: AppState?) -> AppState {
-        let market = Model.Market.demo()
         return AppState(
             navigationState: NavReducer.handleAction(action, state: state),
-            market: market,
-            productGroups: [Model.ProductGroup.demoCheese(), Model.ProductGroup.demoMeat()],
-            products: Model.Product.demoCheeses() + Model.Product.demoMeats(),
-            producers: [Model.Producer.cheeser(), Model.Producer.cheesey(), Model.Producer.meater(), Model.Producer.fishey()],
+            catalog: DemoCatalog(),
             authenticated: AuthReducer.handleAction(action, state: state?.authenticated)
         )
     }
