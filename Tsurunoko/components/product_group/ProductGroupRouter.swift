@@ -16,7 +16,7 @@ extension ProductGroup {
         func changeRouteSegment(_ from: RouteElementIdentifier,
                                 to: RouteElementIdentifier,
                                 animated: Bool,
-                                completionHandler: RoutingCompletionHandler) -> Routable {
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
             completionHandler()
             return self
@@ -24,7 +24,7 @@ extension ProductGroup {
 
         func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                               animated: Bool,
-                              completionHandler: RoutingCompletionHandler) -> Routable {
+                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
             completionHandler()
             return self
@@ -32,7 +32,7 @@ extension ProductGroup {
 
         func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                              animated: Bool,
-                             completionHandler: RoutingCompletionHandler) {
+                             completionHandler: @escaping RoutingCompletionHandler) {
 
             completionHandler()
         }

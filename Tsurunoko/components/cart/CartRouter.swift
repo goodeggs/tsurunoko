@@ -14,7 +14,7 @@ class CartRouter: Routable {
     func changeRouteSegment(_ from: RouteElementIdentifier,
                             to: RouteElementIdentifier,
                             animated: Bool,
-                            completionHandler: RoutingCompletionHandler) -> Routable {
+                            completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         completionHandler()
         return self
@@ -22,7 +22,7 @@ class CartRouter: Routable {
 
     func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                           animated: Bool,
-                          completionHandler: RoutingCompletionHandler) -> Routable {
+                          completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
         completionHandler()
         return self
@@ -30,7 +30,7 @@ class CartRouter: Routable {
 
     func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                          animated: Bool,
-                         completionHandler: RoutingCompletionHandler) {
+                         completionHandler: @escaping RoutingCompletionHandler) {
 
         completionHandler()
     }
