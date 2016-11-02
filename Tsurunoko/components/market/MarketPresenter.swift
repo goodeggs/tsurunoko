@@ -16,16 +16,21 @@ protocol MarketPresenter {
     func showProduct(with identifier: Model.Product.ID)
 }
 
+protocol MarketView: class {
+
+    func render(viewModel: Market.ViewModel)
+}
+
 extension Market {
 
     final class PresenterImpl: StoreSubscriber, MarketPresenter {
 
         let store: AppStore
-        weak var viewController: MarketViewController?
+        weak var view: MarketView?
 
-        init(store: AppStore, viewController: MarketViewController) {
+        init(store: AppStore, view: MarketView) {
             self.store = store
-            self.viewController = viewController
+            self.view = view
         }
 
         func subscribe() {
@@ -39,13 +44,18 @@ extension Market {
         // MARK: - StoreSubscriber
 
         func newState(state: Catalog) {
+            guard let view = self.view else {
+                return
+            }
+
             let cellViewModels = state.market.productGroupIDs.map({ (productGroupID) -> Model.ProductGroup in
                 return state.productGroups.first(where: { productGroupID == $0.identifier })!
             }).map { (productGroup) -> CellViewModel in
                 return CellViewModel(title: productGroup.name, detail: "\(productGroup.productIDs.count) items")
             }
+
             let viewModel = Market.ViewModel(cellViewModels: cellViewModels)
-            self.viewController?.render(viewModel: viewModel)
+            view.render(viewModel: viewModel)
         }
 
         // MARK: - MarketPresenter

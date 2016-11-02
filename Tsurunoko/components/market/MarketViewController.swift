@@ -30,11 +30,21 @@ class MarketViewController: UITableViewController {
 
         self.presenter.unsubscribe()
     }
+}
+
+// MARK: - MarketView
+
+extension MarketViewController: MarketView {
 
     func render(viewModel: Market.ViewModel) {
         self.viewModel = viewModel
         self.tableView.reloadData()
     }
+}
+
+// MARK: - Table display
+
+extension MarketViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.cellViewModels.count

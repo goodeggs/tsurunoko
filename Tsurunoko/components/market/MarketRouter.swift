@@ -10,6 +10,7 @@ import Foundation
 import ReSwiftRouter
 
 extension Market {
+    
     class Router: Routable {
 
         func changeRouteSegment(_ from: RouteElementIdentifier,
