@@ -51,17 +51,13 @@ extension Landing {
 
         func showViewController(for routeIdentifier: RouteElementIdentifier,
                                 animated: Bool,
-                                completionHandler: RoutingCompletionHandler) -> Routable {
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
             guard let component = self.routeMap[routeIdentifier] else {
                 fatalError("Unexpected routeIdentifier \(routeIdentifier).")
             }
 
-            defer {
-                completionHandler()
-            }
-
-            self.viewController.present(component.viewController, animated: true, completion: nil)
+            self.viewController.present(component.viewController, animated: true, completion: completionHandler)
 
             return component.router
         }
