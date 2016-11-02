@@ -76,7 +76,7 @@ extension MarketViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = self.viewModel(for: indexPath)
-        self.presenter.showProduct(with: cellViewModel.identifier)
+        self.presenter.showProductGroup(with: cellViewModel.identifier)
     }
 }
 

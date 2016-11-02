@@ -8,12 +8,13 @@
 
 import Foundation
 import ReSwift
+import ReSwiftRouter
 
 protocol MarketPresenter {
 
     func subscribe()
     func unsubscribe()
-    func showProduct(with identifier: Model.Product.ID)
+    func showProductGroup(with identifier: String)
 }
 
 protocol MarketView: class {
@@ -60,8 +61,11 @@ extension Market {
 
         // MARK: - MarketPresenter
 
-        func showProduct(with identifier: String) {
-            
+        func showProductGroup(with identifier: String) {
+            var route = self.store.state.navigationState.route
+            route.append(ProductGroup.identifier)
+            self.store.dispatch(SetRouteAction(route))
+            self.store.dispatch(SetRouteSpecificData(route: route, data: identifier))
         }
     }
 }
