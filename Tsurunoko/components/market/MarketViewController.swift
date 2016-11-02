@@ -11,6 +11,7 @@ import UIKit
 
 class MarketViewController: UITableViewController {
 
+    var presenter: MarketPresenter!
     var viewModel: Market.ViewModel!
 
     override func viewDidLoad() {

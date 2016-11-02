@@ -9,9 +9,14 @@
 import Foundation
 import ReSwift
 
+protocol MarketPresenter {
+
+    func showProduct(with identifier: Model.Product.ID)
+}
+
 extension Market {
 
-    final class Presenter: StoreSubscriber {
+    final class PresenterImpl: StoreSubscriber, MarketPresenter {
 
         let store: AppStore
         weak var viewController: MarketViewController?
@@ -21,9 +26,17 @@ extension Market {
             self.viewController = viewController
         }
 
+        // MARK: - StoreSubscriber
+
         func newState(state: AppState) {
             let viewModel = Market.ViewModel()
             self.viewController?.render(viewModel: viewModel)
+        }
+
+        // MARK: - MarketPresenter
+
+        func showProduct(with identifier: Model.Product.ID) {
+
         }
     }
 }
