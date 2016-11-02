@@ -22,6 +22,7 @@ extension Authenticate {
         let store: AppStore
 
         func didAuthenticate() {
+            self.store.dispatch(DidAuthenticate())
             self.store.dispatch(SetRouteAction([Main.identifier]))
         }
 
@@ -30,3 +31,4 @@ extension Authenticate {
         }
     }
 }
+

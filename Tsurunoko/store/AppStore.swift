@@ -15,6 +15,8 @@ extension NavigationState: Then {}
 
 typealias AppStore = Store<AppState>
 
+typealias AuthenticationState = Bool
+
 struct AppState: StateType, HasNavigationState {
 
     var navigationState: NavigationState
@@ -43,7 +45,7 @@ struct AppReducer: Reducer {
             productGroups: [Model.ProductGroup.demoCheese(), Model.ProductGroup.demoMeat()],
             products: Model.Product.demoCheeses() + Model.Product.demoMeats(),
             producers: [Model.Producer.cheeser(), Model.Producer.cheesey(), Model.Producer.meater(), Model.Producer.fishey()],
-            authenticated: false
+            authenticated: AuthReducer.handleAction(action, state: state?.authenticated)
         )
     }
 }
@@ -65,6 +67,23 @@ enum NavReducer {
         }
     }
 }
+
+enum AuthReducer {
+
+    static func handleAction(_ action: Action, state optState: AuthenticationState?) -> AuthenticationState {
+        guard let state = optState else {
+            return false
+        }
+
+        if action is DidAuthenticate {
+            return true
+        }
+
+        return state
+    }
+}
+
+
 
 // TODO: <ARLO> decide where redux middleware should live
 let loggingMiddleware: Middleware = { dispatch, getState in

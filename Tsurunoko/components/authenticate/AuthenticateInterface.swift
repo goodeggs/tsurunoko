@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ReSwift
 import ReSwiftRouter
 
 enum Authenticate: ComponentInterface {
@@ -38,5 +39,9 @@ enum Authenticate: ComponentInterface {
         let router = self.router(viewController: viewController)
         return BasicComponent(router: router, viewController: viewController)
     }
+}
+
+struct DidAuthenticate: Action {
+
 }
 
