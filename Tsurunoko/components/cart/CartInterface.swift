@@ -13,11 +13,11 @@ enum Cart: ComponentInterface {
 
     static var identifier = "Cart"
 
-    static func newComponent() -> Component {
+    static func newComponent(store: AppStore) -> Component {
         let router = CartRouter()
         let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! CartViewController
         let navController = UINavigationController(rootViewController: viewController)
-        return BasicComponent(router: router, rootViewController: navController)
+        return BasicComponent(router: router, viewController: navController)
     }
 }
 

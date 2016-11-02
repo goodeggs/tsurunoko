@@ -14,8 +14,8 @@ enum Authenticate: ComponentInterface {
 
     static var identifier = "Authenticate"
 
-    private static func presenter() -> AuthenticatePresenter {
-        return PresenterImpl()
+    private static func presenter(store: AppStore) -> AuthenticatePresenter {
+        return PresenterImpl(store: store)
     }
 
     private static func viewController(presenter: AuthenticatePresenter) -> UIViewController {
@@ -32,11 +32,11 @@ enum Authenticate: ComponentInterface {
         return Authenticate.Router()
     }
 
-    static func newComponent() -> Component {
-        let presenter = self.presenter()
+    static func newComponent(store: AppStore) -> Component {
+        let presenter = self.presenter(store: store)
         let viewController = self.viewController(presenter: presenter)
         let router = self.router(viewController: viewController)
-        return PresenterComponent(router: router, rootViewController: viewController, presenter: presenter)
+        return BasicComponent(router: router, viewController: viewController)
     }
 }
 

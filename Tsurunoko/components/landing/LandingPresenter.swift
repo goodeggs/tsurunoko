@@ -18,8 +18,10 @@ extension Landing {
 
     struct PresenterImpl: LandingPresenter {
 
+        let store: AppStore
+
         func showAuthenticationModal() {
-            mainStore.dispatch(SetRouteAction([Landing.identifier, Authenticate.identifier])) // TODO: <ARLO> would like to push route here
+            self.store.dispatch(SetRouteAction([Landing.identifier, Authenticate.identifier])) // TODO: <ARLO> would like to push route here
         }
     }
 }

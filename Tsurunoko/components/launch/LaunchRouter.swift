@@ -15,6 +15,12 @@ final class LaunchRouter: Routable {
         return UIWindow(frame: UIScreen.main.bounds)
     }()
 
+    let store: AppStore
+
+    init(store: AppStore) {
+        self.store = store
+    }
+
     enum ValidRoute: String {
         case Landing, Main
     }
@@ -55,12 +61,12 @@ final class LaunchRouter: Routable {
         let component: Component
         switch route {
         case .Landing:
-            component = Landing.newComponent()
+            component = Landing.newComponent(store: store)
         case .Main:
-            component = Main.newComponent()
+            component = Main.newComponent(store: store)
         }
 
-        self.window.rootViewController = component.rootViewController
+        self.window.rootViewController = component.viewController
         self.window.makeKeyAndVisible()
 
         return component.router

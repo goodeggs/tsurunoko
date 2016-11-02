@@ -10,15 +10,6 @@ import UIKit
 import ReSwift
 import ReSwiftRouter
 
-// TODO: <ARLO> how best to expose this property? Currently it looks globablly modifiable
-var mainStore = AppStore(
-    reducer: AppReducer(),
-    state: nil,
-    middleware: [
-        loggingMiddleware,
-    ]
-)
-
 struct ApplicationDidFinishLaunching: Action {
 
     let application: UIApplication
@@ -28,11 +19,19 @@ struct ApplicationDidFinishLaunching: Action {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var mainStore = AppStore(
+        reducer: AppReducer(),
+        state: nil,
+        middleware: [
+            loggingMiddleware,
+        ]
+    )
     var router: Router<AppState>!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        router = Router(store: mainStore, rootRoutable: LaunchRouter()) { state in
+        let rootRouter = LaunchRouter(store: mainStore)
+        router = Router(store: mainStore, rootRoutable: rootRouter) { state in
             state.navigationState
         }
 

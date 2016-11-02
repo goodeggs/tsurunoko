@@ -13,11 +13,11 @@ enum Market: ComponentInterface {
 
     static var identifier = "Market"
 
-    static func newComponent() -> Component {
+    static func newComponent(store: AppStore) -> Component {
         let router = Market.Router()
         let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! MarketViewController
         let navController = UINavigationController(rootViewController: viewController)
-        return BasicComponent(router: router, rootViewController: navController)
+        return BasicComponent(router: router, viewController: navController)
     }
 }
 

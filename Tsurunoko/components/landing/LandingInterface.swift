@@ -14,8 +14,8 @@ enum Landing: ComponentInterface {
 
     static var identifier = "Landing"
 
-    private static func presenter() -> LandingPresenter {
-        return PresenterImpl()
+    private static func presenter(store: AppStore) -> LandingPresenter {
+        return PresenterImpl(store: store)
     }
 
     private static func viewController(presenter: LandingPresenter) -> UIViewController {
@@ -24,15 +24,15 @@ enum Landing: ComponentInterface {
         return viewController
     }
 
-    private static func router(viewController: UIViewController) -> Routable {
-        return Landing.Router(viewController: viewController)
+    private static func router(store: AppStore, viewController: UIViewController) -> Routable {
+        return Landing.Router(store: store, viewController: viewController)
     }
 
-    static func newComponent() -> Component {
-        let presenter = self.presenter()
+    static func newComponent(store: AppStore) -> Component {
+        let presenter = self.presenter(store: store)
         let viewController = self.viewController(presenter: presenter)
-        let router = self.router(viewController: viewController)
-        return BasicComponent(router: router, rootViewController: viewController)
+        let router = self.router(store: store, viewController: viewController)
+        return BasicComponent(router: router, viewController: viewController)
     }
 }
 

@@ -11,9 +11,16 @@ import UIKit
 
 class MarketViewController: UITableViewController {
 
+    var viewModel: Market.ViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+
+    func render(viewModel: Market.ViewModel) {
+        self.viewModel = viewModel
+        self.tableView.reloadData()
     }
 }
 

@@ -15,11 +15,13 @@ extension Main {
     // NSObject in order to conform to UITabBarControllerDelegate
     final class Router: NSObject, Routable {
 
-        let mainViewController: MainViewController
+        let store: AppStore
+        let viewController: MainViewController
         let routeMap: [RouteElementIdentifier: Component]
 
-        init(mainViewController: MainViewController, routeMap: [RouteElementIdentifier: Component]) {
-            self.mainViewController = mainViewController
+        init(store: AppStore, viewController: MainViewController, routeMap: [RouteElementIdentifier: Component]) {
+            self.store = store
+            self.viewController = viewController
             self.routeMap = routeMap
         }
 
@@ -54,44 +56,14 @@ extension Main {
                 fatalError("Unable to handle route to '\(route)'.")
             }
 
-            guard let tabViewControllers = mainViewController.viewControllers,
-                let index = tabViewControllers.index(of: component.rootViewController) else {
+            guard let tabViewControllers = self.viewController.viewControllers,
+                let index = tabViewControllers.index(of: component.viewController) else {
                     fatalError("Unable to find view controller from routeMap in tab bar.")
             }
 
-            mainViewController.selectedIndex = index
+            self.viewController.selectedIndex = index
             return component.router
         }
-    }
-}
-
-extension Main.Router: Component {
-
-    var rootViewController: UIViewController {
-        return mainViewController
-    }
-
-    var router: Routable {
-        return self
-    }
-}
-
-extension Main.Router: UITabBarControllerDelegate {
-
-    func tabBarController(_ tabBarController: UITabBarController,
-                          shouldSelect viewController: UIViewController) -> Bool {
-
-        guard let (route, _) = self.routeMap.first(where: { (key: RouteElementIdentifier, value: Component) -> Bool in
-            viewController === value.rootViewController
-        }) else {
-            fatalError("Unable to find matching root for tab view controller.")
-        }
-
-        mainStore.dispatch(
-            SetRouteAction([Main.identifier, route])
-        )
-
-        return false
     }
 }
 

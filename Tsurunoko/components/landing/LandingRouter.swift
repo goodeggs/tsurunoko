@@ -13,9 +13,11 @@ extension Landing {
 
     final class Router: Routable {
 
+        let store: AppStore
         let viewController: UIViewController
 
-        init(viewController: UIViewController) {
+        init(store: AppStore, viewController: UIViewController) {
+            self.store = store
             self.viewController = viewController
         }
 
@@ -59,10 +61,10 @@ extension Landing {
             let component: Component
             switch route {
             case .Authenticate:
-                component = Authenticate.newComponent()
+                component = Authenticate.newComponent(store: store)
             }
             
-            self.viewController.present(component.rootViewController, animated: true, completion: nil)
+            self.viewController.present(component.viewController, animated: true, completion: nil)
             
             return component.router
         }

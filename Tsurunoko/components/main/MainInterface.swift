@@ -7,30 +7,32 @@
 //
 
 import Foundation
-import UIKit
 import ReSwiftRouter
 
 enum Main: ComponentInterface {
 
     static var identifier = "Main"
 
-    static func newComponent() -> Component {
+    typealias RouteMap = [RouteElementIdentifier: Component]
 
-        let market = Market.newComponent()
-        let cart = Cart.newComponent()
+    static func newComponent(store: AppStore) -> Component {
 
-        let mainViewController = MainViewController()
-        mainViewController.viewControllers = [market.rootViewController, cart.rootViewController]
+        let market = Market.newComponent(store: store)
+        let cart = Cart.newComponent(store: store)
 
         let routeMap = [
             Market.identifier: market,
             Cart.identifier: cart
         ]
-        let router = Main.Router(mainViewController: mainViewController, routeMap: routeMap)
 
-        mainViewController.delegate = router
-        
-        return router
+        let mainViewController = MainViewController()
+        mainViewController.viewControllers = [market.viewController, cart.viewController]
+        mainViewController.delegate = mainViewController
+        mainViewController.presenter = Main.PresenterImpl(store: store, routeMap: routeMap)
+
+        let router = Main.Router(store: store, viewController: mainViewController, routeMap: routeMap)
+
+        return BasicComponent(router: router, viewController: mainViewController)
     }
 }
 

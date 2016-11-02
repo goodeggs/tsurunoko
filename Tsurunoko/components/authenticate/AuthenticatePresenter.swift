@@ -19,12 +19,14 @@ extension Authenticate {
 
     struct PresenterImpl: AuthenticatePresenter {
 
+        let store: AppStore
+
         func didAuthenticate() {
-            mainStore.dispatch(SetRouteAction([Main.identifier]))
+            self.store.dispatch(SetRouteAction([Main.identifier]))
         }
 
         func didCancel() {
-            mainStore.dispatch(SetRouteAction([Landing.identifier])) // TODO: <ARLO> would like to pop here
+            self.store.dispatch(SetRouteAction([Landing.identifier])) // TODO: <ARLO> would like to pop here
         }
     }
 }
