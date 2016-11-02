@@ -12,6 +12,7 @@ extension ProductGroup {
 
     struct ViewModel {
 
+        let title: String
         let cellViewModels: [CellViewModel]
     }
 

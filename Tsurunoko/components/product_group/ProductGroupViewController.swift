@@ -38,6 +38,7 @@ extension ProductGroupViewController: ProductGroupView {
 
     func render(viewModel: ProductGroup.ViewModel) {
         self.viewModel = viewModel
+        self.title = viewModel.title
         self.tableView.reloadData()
     }
 }

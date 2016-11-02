@@ -28,7 +28,10 @@ extension ProductGroup {
 
         let store: AppStore
         weak var view: ProductGroupView?
-        let productGroupID: Model.ProductGroup.ID = "cheese"
+        lazy var productGroupID: Model.ProductGroup.ID = {
+            let route = self.store.state.navigationState.route
+            return self.store.state.navigationState.getRouteSpecificState(route)!
+        }()
 
         init(store: AppStore, view: ProductGroupView) {
             self.store = store
@@ -60,7 +63,7 @@ extension ProductGroup {
                 return CellViewModel(identifier: product.identifier, title: product.name, detail: product.description)
             }
 
-            let viewModel = ProductGroup.ViewModel(cellViewModels: cellViewModels)
+            let viewModel = ProductGroup.ViewModel(title: productGroup.name, cellViewModels: cellViewModels)
             view.render(viewModel: viewModel)
         }
 
