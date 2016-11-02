@@ -17,9 +17,9 @@ extension Main {
 
         let store: AppStore
         let viewController: MainViewController
-        let routeMap: [RouteElementIdentifier: Component]
+        let routeMap: RouteMap
 
-        init(store: AppStore, viewController: MainViewController, routeMap: [RouteElementIdentifier: Component]) {
+        init(store: AppStore, viewController: MainViewController, routeMap: RouteMap) {
             self.store = store
             self.viewController = viewController
             self.routeMap = routeMap
