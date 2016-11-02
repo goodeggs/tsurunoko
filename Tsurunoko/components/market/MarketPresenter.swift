@@ -51,7 +51,7 @@ extension Market {
             let cellViewModels = state.market.productGroupIDs.map({ (productGroupID) -> Model.ProductGroup in
                 return state.productGroups.first(where: { productGroupID == $0.identifier })!
             }).map { (productGroup) -> CellViewModel in
-                return CellViewModel(title: productGroup.name, detail: "\(productGroup.productIDs.count) items")
+                return CellViewModel(identifier: productGroup.identifier, title: productGroup.name, detail: "\(productGroup.productIDs.count) items")
             }
 
             let viewModel = Market.ViewModel(cellViewModels: cellViewModels)
@@ -60,8 +60,8 @@ extension Market {
 
         // MARK: - MarketPresenter
 
-        func showProduct(with identifier: Model.Product.ID) {
-
+        func showProduct(with identifier: String) {
+            
         }
     }
 }

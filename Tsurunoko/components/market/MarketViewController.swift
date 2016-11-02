@@ -46,13 +46,17 @@ extension MarketViewController: MarketView {
 
 extension MarketViewController {
 
+    func viewModel(for indexPath: IndexPath) -> Market.CellViewModel {
+        return self.viewModel.cellViewModels[indexPath.row]
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.cellViewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MarketCell", for: indexPath)
-        let cellViewModel = self.viewModel.cellViewModels[indexPath.row]
+        let cellViewModel = self.viewModel(for: indexPath)
         cell.configure(with: cellViewModel)
         return cell
     }
@@ -63,6 +67,16 @@ extension UITableViewCell {
     func configure(with viewModel: Market.CellViewModel) {
         self.textLabel?.text = viewModel.title
         self.detailTextLabel?.text = viewModel.detail
+    }
+}
+
+// MARK: - Table interaction
+
+extension MarketViewController {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = self.viewModel(for: indexPath)
+        self.presenter.showProduct(with: cellViewModel.identifier)
     }
 }
 

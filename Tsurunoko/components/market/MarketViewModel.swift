@@ -17,6 +17,7 @@ extension Market {
 
     struct CellViewModel {
 
+        let identifier: String
         let title: String
         let detail: String
     }
