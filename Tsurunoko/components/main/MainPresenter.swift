@@ -29,8 +29,8 @@ extension Main {
 
         func showTab(for viewController: UIViewController) {
 
-            guard let (route, _) = self.routeMap.first(where: { (key: RouteElementIdentifier, value: Component) -> Bool in
-                viewController === value.viewController
+            guard let (route, _) = self.routeMap.first(where: { (route: RouteElementIdentifier, component: Component) -> Bool in
+                viewController === component.viewController
             }) else {
                 fatalError("Unable to find matching root for tab view controller.")
             }

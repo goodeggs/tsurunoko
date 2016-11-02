@@ -13,8 +13,6 @@ enum Main: ComponentInterface {
 
     static var identifier = "Main"
 
-    typealias RouteMap = [RouteElementIdentifier: Component]
-
     static func newComponent(store: AppStore) -> Component {
 
         let market = Market.newComponent(store: store)

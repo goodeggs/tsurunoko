@@ -35,3 +35,6 @@ class BasicComponent: Component {
     }
 }
 
+// an implementation detail useful for Routers, not sure where it should live
+typealias RouteMap = [RouteElementIdentifier: Component]
+

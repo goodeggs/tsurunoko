@@ -13,6 +13,12 @@ extension Landing {
 
     final class Router: Routable {
 
+        lazy var routeMap: RouteMap = {
+            return [
+                Authenticate.identifier: Authenticate.newComponent(store: self.store)
+            ]
+        }()
+
         let store: AppStore
         let viewController: UIViewController
 
@@ -50,7 +56,7 @@ extension Landing {
                                 animated: Bool,
                                 completionHandler: RoutingCompletionHandler) -> Routable {
 
-            guard let route = ValidRoute(rawValue: routeIdentifier) else {
+            guard let component = self.routeMap[routeIdentifier] else {
                 fatalError("Unexpected routeIdentifier \(routeIdentifier).")
             }
 
@@ -58,14 +64,8 @@ extension Landing {
                 completionHandler()
             }
 
-            let component: Component
-            switch route {
-            case .Authenticate:
-                component = Authenticate.newComponent(store: store)
-            }
-            
             self.viewController.present(component.viewController, animated: true, completion: nil)
-            
+
             return component.router
         }
     }

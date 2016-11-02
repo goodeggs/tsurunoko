@@ -15,14 +15,17 @@ final class LaunchRouter: Routable {
         return UIWindow(frame: UIScreen.main.bounds)
     }()
 
+    lazy var routeMap: RouteMap = {
+        return [
+            Landing.identifier: Landing.newComponent(store: self.store),
+            Main.identifier: Main.newComponent(store: self.store)
+        ]
+    }()
+
     let store: AppStore
 
     init(store: AppStore) {
         self.store = store
-    }
-
-    enum ValidRoute: String {
-        case Landing, Main
     }
 
     func changeRouteSegment(_ from: RouteElementIdentifier,
@@ -43,6 +46,7 @@ final class LaunchRouter: Routable {
     func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
                          animated: Bool,
                          completionHandler: @escaping RoutingCompletionHandler) {
+
         completionHandler() // called when switching between landing and main, nothing to do here
     }
 
@@ -50,20 +54,12 @@ final class LaunchRouter: Routable {
                             animated: Bool,
                             completionHandler: RoutingCompletionHandler) -> Routable {
 
-        guard let route = ValidRoute(rawValue: routeIdentifier) else {
+        guard let component = self.routeMap[routeIdentifier] else {
             fatalError("Unexpected routeIdentifier \(routeIdentifier).")
         }
 
         defer {
             completionHandler()
-        }
-
-        let component: Component
-        switch route {
-        case .Landing:
-            component = Landing.newComponent(store: store)
-        case .Main:
-            component = Main.newComponent(store: store)
         }
 
         self.window.rootViewController = component.viewController
