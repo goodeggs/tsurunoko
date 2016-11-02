@@ -27,7 +27,9 @@ extension Authenticate {
         }
 
         func didCancel() {
-            self.store.dispatch(SetRouteAction([Landing.identifier])) // TODO: <ARLO> would like action to pop route
+            var route = self.store.state.navigationState.route
+            _ = route.popLast()
+            self.store.dispatch(SetRouteAction(route))
         }
     }
 }

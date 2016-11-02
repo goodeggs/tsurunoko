@@ -21,7 +21,9 @@ extension Landing {
         let store: AppStore
 
         func showAuthenticationModal() {
-            self.store.dispatch(SetRouteAction([Landing.identifier, Authenticate.identifier])) // TODO: <ARLO> would like to push route here
+            var route = self.store.state.navigationState.route
+            route.append(Authenticate.identifier)
+            self.store.dispatch(SetRouteAction(route))
         }
     }
 }
