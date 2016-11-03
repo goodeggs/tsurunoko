@@ -30,7 +30,10 @@ extension Product {
 
         let store: AppStore
         weak var view: ProductView?
-        var productID: Model.Product.ID?
+
+        var productID: Model.Product.ID {
+            return self.store.state.selected.productID!
+        }
 
         init(store: AppStore, view: ProductView) {
             self.store = store
@@ -38,30 +41,26 @@ extension Product {
         }
 
         func subscribe() {
-            let route = self.store.state.navigationState.route
-            self.productID = self.store.state.navigationState.getRouteSpecificState(route)
             self.store.subscribe(self)
         }
 
         func unsubscribe() {
-            self.productID = nil
             self.store.unsubscribe(self)
         }
 
         // MARK: - StoreSubscriber
 
         func newState(state: AppState) {
-            guard let view = self.view,
-                let productID = self.productID else {
+            guard let view = self.view else {
                 return
             }
 
-            guard let product = state.catalog.products.first(where: { productID == $0.identifier }) else {
-                fatalError("unable to find product with identifier: \(productID)")
+            guard let product = state.catalog.products.first(where: { self.productID == $0.identifier }) else {
+                fatalError("unable to find product with identifier: \(self.productID)")
             }
 
             guard let producer = state.catalog.producers.first(where: { product.producerID == $0.identifier }) else {
-                fatalError("unable to find product with identifier: \(productID)")
+                fatalError("unable to find producer with identifier: \(product.producerID)")
             }
 
             let viewModel = self.viewModel(
@@ -94,11 +93,11 @@ extension Product {
         }
 
         func decrementProductQuantity() {
-            self.store.dispatch(ChangeProductQuantity.decrement(productID: self.productID!))
+            self.store.dispatch(ChangeProductQuantity.decrement(productID: self.productID))
         }
 
         func incrementProductQuantity() {
-            self.store.dispatch(ChangeProductQuantity.increment(productID: self.productID!))
+            self.store.dispatch(ChangeProductQuantity.increment(productID: self.productID))
         }
     }
 }

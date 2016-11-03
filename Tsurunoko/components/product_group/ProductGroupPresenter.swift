@@ -29,7 +29,10 @@ extension ProductGroup {
 
         let store: AppStore
         weak var view: ProductGroupView?
-        var productGroupID: Model.ProductGroup.ID?
+
+        var productGroupID: Model.ProductGroup.ID {
+            return self.store.state.selected.productGroupID!
+        }
 
         init(store: AppStore, view: ProductGroupView) {
             self.store = store
@@ -37,30 +40,26 @@ extension ProductGroup {
         }
 
         func subscribe() {
-            let route = self.store.state.navigationState.route
-            self.productGroupID = self.store.state.navigationState.getRouteSpecificState(route)
-            self.store.subscribe(self, selector: { return $0.catalog })
+            self.store.subscribe(self)
         }
 
         func unsubscribe() {
-            self.productGroupID = nil
             self.store.unsubscribe(self)
         }
 
         // MARK: - StoreSubscriber
 
-        func newState(state: Catalog) {
-            guard let view = self.view,
-                let productGroupID = self.productGroupID else {
+        func newState(state: AppState) {
+            guard let view = self.view else {
                 return
             }
 
-            guard let productGroup = state.productGroups.first(where: { productGroupID == $0.identifier }) else {
-                fatalError("unable to find product group with identifier: \(productGroupID)")
+            guard let productGroup = state.catalog.productGroups.first(where: { self.productGroupID == $0.identifier }) else {
+                fatalError("unable to find product group with identifier: \(self.productGroupID)")
             }
 
             let cellViewModels = productGroup.productIDs.map({ (productID) -> Model.Product in
-                return state.products.first(where: { productID == $0.identifier })!
+                return state.catalog.products.first(where: { productID == $0.identifier })!
             }).map { (product) -> CellViewModel in
                 return CellViewModel(identifier: product.identifier, title: product.name, detail: product.description)
             }
@@ -72,10 +71,10 @@ extension ProductGroup {
         // MARK: - ProductGroupPresenter
 
         func showProduct(with identifier: String) {
+            self.store.dispatch(SelectProduct(identifier: identifier))
             var route = self.store.state.navigationState.route
             route.append(Product.identifier)
             self.store.dispatch(SetRouteAction(route))
-            self.store.dispatch(SetRouteSpecificData(route: route, data: identifier))
         }
 
         func willPopView() {

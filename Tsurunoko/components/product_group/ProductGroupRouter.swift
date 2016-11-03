@@ -58,7 +58,7 @@ extension ProductGroup {
             }
 
             self.viewController.pushViewController(component.viewController, animated: animated, completion: completionHandler)
-                        
+
             return component.router
         }
     }

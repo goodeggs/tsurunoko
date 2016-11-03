@@ -64,8 +64,8 @@ extension Market {
         func showProductGroup(with identifier: String) {
             var route = self.store.state.navigationState.route
             route.append(ProductGroup.identifier)
+            self.store.dispatch(SelectProductGroup(identifier: identifier))
             self.store.dispatch(SetRouteAction(route))
-            self.store.dispatch(SetRouteSpecificData(route: route, data: identifier))
         }
     }
 }

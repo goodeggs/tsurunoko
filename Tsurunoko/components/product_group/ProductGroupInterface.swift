@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ReSwift
 
 enum ProductGroup {
 
@@ -20,5 +21,10 @@ enum ProductGroup {
         let router = ProductGroup.Router(store: store, viewController: navigationController)
         return BasicComponent(router: router, viewController: viewController)
     }
+}
+
+struct SelectProduct: Action {
+
+    let identifier: Model.Product.ID
 }
 

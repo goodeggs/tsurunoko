@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ReSwift
 
 enum Market: ComponentInterface {
 
@@ -21,5 +22,10 @@ enum Market: ComponentInterface {
         let router = Market.Router(store: store, viewController: navController)
         return BasicComponent(router: router, viewController: navController)
     }
+}
+
+struct SelectProductGroup: Action {
+
+    let identifier: Model.ProductGroup.ID
 }
 

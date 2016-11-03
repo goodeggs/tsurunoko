@@ -21,6 +21,8 @@ struct AppState: StateType, HasNavigationState {
 
     var navigationState: NavigationState
 
+    let selected: Model.Selected
+
     let catalog: Catalog
 
     let authenticated: Bool
@@ -37,6 +39,7 @@ struct AppReducer: Reducer {
     func handleAction(action: Action, state: AppState?) -> AppState {
         return AppState(
             navigationState: NavReducer.handleAction(action, state: state),
+            selected: SelectedReducer.handleAction(action, state: state?.selected),
             catalog: DemoCatalog(),
             authenticated: AuthReducer.handleAction(action, state: state?.authenticated),
             cart: CartReducer.handleAction(action, state: state?.cart)
@@ -58,6 +61,26 @@ enum NavReducer {
         let initialRouteIdentifier = state.authenticated ? Main.identifier : Landing.identifier
         return state.navigationState.with {
             $0.route.append(initialRouteIdentifier)
+        }
+    }
+}
+
+enum SelectedReducer {
+
+    static func handleAction(_ action: Action, state optState: Model.Selected?) -> Model.Selected {
+        guard var state = optState else {
+            return Model.Selected()
+        }
+
+        switch action {
+        case let productGroup as SelectProductGroup:
+            state.productGroupID = productGroup.identifier
+            return state
+        case let product as SelectProduct:
+            state.productID = product.identifier
+            return state
+        default:
+            return state
         }
     }
 }
