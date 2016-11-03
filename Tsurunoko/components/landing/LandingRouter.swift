@@ -57,7 +57,7 @@ extension Landing {
                 fatalError("Unexpected routeIdentifier \(routeIdentifier).")
             }
 
-            self.viewController.present(component.viewController, animated: true, completion: completionHandler)
+            self.viewController.present(component.viewController, animated: animated, completion: completionHandler)
 
             return component.router
         }

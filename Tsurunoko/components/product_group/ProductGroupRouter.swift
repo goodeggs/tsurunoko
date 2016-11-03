@@ -57,10 +57,8 @@ extension ProductGroup {
                 fatalError("Unexpected routeIdentifier \(routeIdentifier).")
             }
 
-            self.viewController.pushViewController(component.viewController, animated: true)
-            
-            completionHandler()
-            
+            self.viewController.pushViewController(component.viewController, animated: animated, completion: completionHandler)
+                        
             return component.router
         }
     }
