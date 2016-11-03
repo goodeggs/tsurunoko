@@ -40,6 +40,13 @@ extension Main {
             return selectTab(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
         }
 
+        func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                             animated: Bool,
+                             completionHandler: @escaping RoutingCompletionHandler) {
+
+            completionHandler() // nav controller is handling the pop automatically
+        }
+
         func selectTab(for route: RouteElementIdentifier,
                        animated: Bool,
                        completionHandler: RoutingCompletionHandler) -> Routable {

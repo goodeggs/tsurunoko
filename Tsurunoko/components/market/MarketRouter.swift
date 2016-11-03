@@ -22,6 +22,8 @@ extension Market {
         let store: AppStore
         let viewController: UINavigationController
 
+        var navigationHandler: NavigationHandler?
+
         init(store: AppStore, viewController: UINavigationController) {
             self.store = store
             self.viewController = viewController
@@ -57,7 +59,10 @@ extension Market {
                 fatalError("Unexpected routeIdentifier \(routeIdentifier).")
             }
 
-            self.viewController.pushViewController(component.viewController, animated: animated, completion: completionHandler)
+            self.navigationHandler = NavigationHandler(completionHandler: completionHandler)
+            self.viewController.delegate = self.navigationHandler
+
+            self.viewController.pushViewController(component.viewController, animated: animated)
 
             return component.router
         }

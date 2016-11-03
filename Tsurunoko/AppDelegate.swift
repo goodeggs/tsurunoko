@@ -35,11 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state.navigationState
         }
 
-        mainStore.dispatch(ApplicationDidFinishLaunching(application: application, launchOptions: launchOptions))
-//        let route = ["Main", "Market", "ProductGroup", "Product"]
-//        mainStore.dispatch(SelectProductGroup(identifier: "cheese"))
-//        mainStore.dispatch(SelectProduct(identifier: "cheese1"))
-//        mainStore.dispatch(SetRouteAction(route, animated: false))
+//        mainStore.dispatch(ApplicationDidFinishLaunching(application: application, launchOptions: launchOptions))
+        let route = ["Main", "Market", "ProductGroup", "Product"]
+        mainStore.dispatch(SelectProductGroup(identifier: "cheese"))
+        mainStore.dispatch(SelectProduct(identifier: "cheese1"))
+        mainStore.dispatch(SetRouteAction(route, animated: false))
 
         return true
     }
