@@ -1,10 +1,7 @@
 # Tsurunoko
 
-A sweeter architecture for persimmon.
-
 [NPR on tracking the elusive chocolate persimmon](http://www.npr.org/sections/thesalt/2012/11/08/164696316/tracking-the-elusive-chocolate-persimmon
 )
-
 
 ## What we are solving, not solving and where to from here:
 
