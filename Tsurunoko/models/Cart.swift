@@ -12,9 +12,21 @@ extension Model {
 
     struct Cart {
 
-        typealias ID = String
+        let items: [CartItem]
+    }
 
-        let id: ID
-        let productIDs: [Product.ID]
+    struct CartItem {
+
+        let productID: Product.ID
+        let quantity: Int
     }
 }
+
+extension Model.Cart {
+
+    init() {
+        
+        items = []
+    }
+}
+

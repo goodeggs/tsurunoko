@@ -15,7 +15,7 @@ extension Market {
 
         lazy var routeMap: RouteMap = {
             return [
-                ProductGroup.identifier: ProductGroup.newComponent(store: self.store)
+                ProductGroup.identifier: ProductGroup.newComponent(store: self.store, navigationController: self.viewController)
             ]
         }()
 
@@ -46,7 +46,7 @@ extension Market {
                              animated: Bool,
                              completionHandler: @escaping RoutingCompletionHandler) {
 
-            completionHandler()
+            completionHandler() // nav controller is handling the pop automatically
         }
 
         func showViewController(for routeIdentifier: RouteElementIdentifier,

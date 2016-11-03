@@ -20,3 +20,4 @@ extension Model {
         let password: String
     }
 }
+

@@ -36,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         mainStore.dispatch(ApplicationDidFinishLaunching(application: application, launchOptions: launchOptions))
+//        let route = ["Main", "Market", "ProductGroup"]// ["Main", "Cart"]
+//        mainStore.dispatch(SetRouteSpecificData(route: route, data: "cheese"))
+//        mainStore.dispatch(SetRouteAction(route))
 
         return true
     }

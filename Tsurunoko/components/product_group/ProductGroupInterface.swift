@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-enum ProductGroup: ComponentInterface {
+enum ProductGroup {
 
     static var identifier = "ProductGroup"
 
-    static func newComponent(store: AppStore) -> Component {
-        let router = ProductGroup.Router()
+    static func newComponent(store: AppStore, navigationController: UINavigationController) -> Component {
         let viewController = UIStoryboard(name: self.identifier, bundle: nil).instantiateInitialViewController() as! ProductGroupViewController
         let presenter = ProductGroup.PresenterImpl(store: store, view: viewController)
         viewController.presenter = presenter
+        let router = ProductGroup.Router(store: store, viewController: navigationController)
         return BasicComponent(router: router, viewController: viewController)
     }
 }

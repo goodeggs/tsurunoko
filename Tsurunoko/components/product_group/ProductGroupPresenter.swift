@@ -29,10 +29,7 @@ extension ProductGroup {
 
         let store: AppStore
         weak var view: ProductGroupView?
-        var productGroupID: Model.ProductGroup.ID? {
-            let route = self.store.state.navigationState.route
-            return self.store.state.navigationState.getRouteSpecificState(route)
-        }
+        var productGroupID: Model.ProductGroup.ID?
 
         init(store: AppStore, view: ProductGroupView) {
             self.store = store
@@ -40,10 +37,13 @@ extension ProductGroup {
         }
 
         func subscribe() {
+            let route = self.store.state.navigationState.route
+            self.productGroupID = self.store.state.navigationState.getRouteSpecificState(route)
             self.store.subscribe(self, selector: { return $0.catalog })
         }
 
         func unsubscribe() {
+            self.productGroupID = nil
             self.store.unsubscribe(self)
         }
 
@@ -72,7 +72,10 @@ extension ProductGroup {
         // MARK: - ProductGroupPresenter
 
         func showProduct(with identifier: String) {
-
+            var route = self.store.state.navigationState.route
+            route.append(Product.identifier)
+            self.store.dispatch(SetRouteAction(route))
+            self.store.dispatch(SetRouteSpecificData(route: route, data: identifier))
         }
 
         func willPopView() {

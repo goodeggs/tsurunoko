@@ -25,7 +25,7 @@ struct AppState: StateType, HasNavigationState {
 
     let authenticated: Bool
 //    let user: Model.User
-//    let cart: Model.Cart
+    let cart: Model.Cart
 //    let orders: [Model.Order]
 //    let addresses: [Model.Address]
 //    let paymentMethods: [Model.PaymentMethod]
@@ -38,7 +38,8 @@ struct AppReducer: Reducer {
         return AppState(
             navigationState: NavReducer.handleAction(action, state: state),
             catalog: DemoCatalog(),
-            authenticated: AuthReducer.handleAction(action, state: state?.authenticated)
+            authenticated: AuthReducer.handleAction(action, state: state?.authenticated),
+            cart: CartReducer.handleAction(action, state: state?.cart)
         )
     }
 }
@@ -70,6 +71,17 @@ enum AuthReducer {
 
         if action is DidAuthenticate {
             return true
+        }
+
+        return state
+    }
+}
+
+enum CartReducer {
+
+    static func handleAction(_ action: Action, state optState: Model.Cart?) -> Model.Cart {
+        guard let state = optState else {
+            return Model.Cart()
         }
 
         return state

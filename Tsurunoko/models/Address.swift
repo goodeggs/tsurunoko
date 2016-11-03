@@ -21,3 +21,4 @@ extension Model {
         let zipCode: String
     }
 }
+

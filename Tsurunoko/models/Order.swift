@@ -26,3 +26,4 @@ extension Model {
         let paymentMethod: PaymentMethod?
     }
 }
+
