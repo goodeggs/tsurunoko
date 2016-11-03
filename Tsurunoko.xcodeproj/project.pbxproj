@@ -49,6 +49,7 @@
 		09DC6B381DCAB6EC00FDCC45 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC6B321DCAB6EC00FDCC45 /* ProductRouter.swift */; };
 		09DC6B391DCAB6EC00FDCC45 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC6B331DCAB6EC00FDCC45 /* ProductViewController.swift */; };
 		09DC6B3A1DCAB6EC00FDCC45 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC6B341DCAB6EC00FDCC45 /* ProductViewModel.swift */; };
+		09DC6B3D1DCAE5A200FDCC45 /* UINavigationController+completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC6B3C1DCAE5A200FDCC45 /* UINavigationController+completion.swift */; };
 		09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */; };
 		09E1AEC61DC840D900551E63 /* AuthenticatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */; };
 		09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EA66021DC1820A0019FD0D /* Launch.storyboard */; };
@@ -102,6 +103,7 @@
 		09DC6B321DCAB6EC00FDCC45 /* ProductRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
 		09DC6B331DCAB6EC00FDCC45 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		09DC6B341DCAB6EC00FDCC45 /* ProductViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		09DC6B3C1DCAE5A200FDCC45 /* UINavigationController+completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+completion.swift"; sourceTree = "<group>"; };
 		09E1AEC31DC83AD300551E63 /* LandingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
 		09E1AEC51DC840D900551E63 /* AuthenticatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatePresenter.swift; sourceTree = "<group>"; };
 		09EA66021DC1820A0019FD0D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				0985AF5E1DC0164F00FE3321 /* models */,
 				090DCC411DBEDB5B00FA55D9 /* services */,
 				09C0E5EB1DA855360019E4AF /* store */,
+				09DC6B3B1DCAE56400FDCC45 /* utils */,
 				09C0E5D71DA84EF60019E4AF /* Assets.xcassets */,
 				09C0E5DC1DA84EF60019E4AF /* Info.plist */,
 			);
@@ -298,6 +301,14 @@
 				0985AF661DC0250100FE3321 /* AppStore.swift */,
 			);
 			path = store;
+			sourceTree = "<group>";
+		};
+		09DC6B3B1DCAE56400FDCC45 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				09DC6B3C1DCAE5A200FDCC45 /* UINavigationController+completion.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		09EA66011DC181960019FD0D /* launch */ = {
@@ -468,6 +479,7 @@
 				0985AF841DC040E000FE3321 /* MainRouter.swift in Sources */,
 				09D328991DC93E8B00F3D767 /* MarketPresenter.swift in Sources */,
 				09DC6B3A1DCAB6EC00FDCC45 /* ProductViewModel.swift in Sources */,
+				09DC6B3D1DCAE5A200FDCC45 /* UINavigationController+completion.swift in Sources */,
 				09E1AEC41DC83AD300551E63 /* LandingPresenter.swift in Sources */,
 				0985AF731DC02C8000FE3321 /* PaymentMethod.swift in Sources */,
 				0985AF671DC0250100FE3321 /* AppStore.swift in Sources */,
