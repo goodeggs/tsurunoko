@@ -84,8 +84,16 @@ extension UITableViewCell {
 extension ProductGroupViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         let cellViewModel = self.viewModel(for: indexPath)
-        self.presenter.showProduct(with: cellViewModel.identifier)
+        self.presenter.selectedProduct(with: cellViewModel.identifier)
+    }
+
+    // TODO: <ARLO> this method is not getting called, no idea why
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        let cellViewModel = self.viewModel(for: indexPath)
+        self.presenter.deselectedProduct(with: cellViewModel.identifier)
     }
 }
 

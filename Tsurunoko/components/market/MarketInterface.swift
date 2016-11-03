@@ -29,3 +29,7 @@ struct SelectProductGroup: Action {
     let identifier: Model.ProductGroup.ID
 }
 
+struct DeselectProductGroup: Action {
+
+}
+

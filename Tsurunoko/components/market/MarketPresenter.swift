@@ -14,7 +14,8 @@ protocol MarketPresenter {
 
     func subscribe()
     func unsubscribe()
-    func showProductGroup(with identifier: String)
+    func selectedProductGroup(with identifier: String)
+    func deselectedProductGroup(with identifier: String)
 }
 
 protocol MarketView: class {
@@ -61,11 +62,15 @@ extension Market {
 
         // MARK: - MarketPresenter
 
-        func showProductGroup(with identifier: String) {
+        func selectedProductGroup(with identifier: String) {
             var route = self.store.state.navigationState.route
             route.append(ProductGroup.identifier)
             self.store.dispatch(SelectProductGroup(identifier: identifier))
             self.store.dispatch(SetRouteAction(route))
+        }
+
+        func deselectedProductGroup(with identifier: String) {
+            self.store.dispatch(DeselectProductGroup())
         }
     }
 }

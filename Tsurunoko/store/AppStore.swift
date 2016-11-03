@@ -76,8 +76,14 @@ enum SelectedReducer {
         case let productGroup as SelectProductGroup:
             state.productGroupID = productGroup.identifier
             return state
+        case is DeselectProductGroup:
+            state.productGroupID = nil
+            return state
         case let product as SelectProduct:
             state.productID = product.identifier
+            return state
+        case is DeselectProduct:
+            state.productID = nil
             return state
         default:
             return state

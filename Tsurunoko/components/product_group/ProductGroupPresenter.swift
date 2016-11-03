@@ -14,7 +14,8 @@ protocol ProductGroupPresenter {
 
     func subscribe()
     func unsubscribe()
-    func showProduct(with identifier: String)
+    func selectedProduct(with identifier: String)
+    func deselectedProduct(with identifier: String)
     func willPopView()
 }
 
@@ -70,11 +71,16 @@ extension ProductGroup {
 
         // MARK: - ProductGroupPresenter
 
-        func showProduct(with identifier: String) {
-            self.store.dispatch(SelectProduct(identifier: identifier))
+        func selectedProduct(with identifier: String) {
             var route = self.store.state.navigationState.route
             route.append(Product.identifier)
+            self.store.dispatch(SelectProduct(identifier: identifier))
             self.store.dispatch(SetRouteAction(route))
+
+        }
+
+        func deselectedProduct(with identifier: String) {
+            self.store.dispatch(DeselectProduct())
         }
 
         func willPopView() {

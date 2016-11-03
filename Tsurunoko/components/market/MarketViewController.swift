@@ -75,8 +75,16 @@ extension UITableViewCell {
 extension MarketViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         let cellViewModel = self.viewModel(for: indexPath)
-        self.presenter.showProductGroup(with: cellViewModel.identifier)
+        self.presenter.selectedProductGroup(with: cellViewModel.identifier)
+    }
+
+    // TODO: <ARLO> this method is not getting called, no idea why
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        let cellViewModel = self.viewModel(for: indexPath)
+        self.presenter.deselectedProductGroup(with: cellViewModel.identifier)
     }
 }
 
