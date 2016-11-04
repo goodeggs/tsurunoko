@@ -36,9 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         mainStore.dispatch(ApplicationDidFinishLaunching(application: application, launchOptions: launchOptions))
+
 //        let route = ["Main", "Market", "ProductGroup", "Product"]
 //        mainStore.dispatch(SelectProductGroup(identifier: "cheese"))
 //        mainStore.dispatch(SelectProduct(identifier: "cheese1"))
+//        mainStore.dispatch(SetRouteAction(route, animated: false))
+
+//        let route = ["Main", "Cart"]
+//        mainStore.dispatch(ChangeProductQuantity.set(to: 1, productID: "cheese1"))
+//        mainStore.dispatch(ChangeProductQuantity.set(to: 2, productID: "cheese2"))
+//        mainStore.dispatch(ChangeProductQuantity.set(to: 3, productID: "cheese3"))
 //        mainStore.dispatch(SetRouteAction(route, animated: false))
 
         return true
