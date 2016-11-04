@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReSwift
 import ReSwiftRouter
 
 enum Main {
@@ -30,7 +31,56 @@ enum Main {
 
         let router = Main.Router(store: store, viewController: mainViewController, routeMap: routeMap)
 
+        let cartBadgeController = TabBadgeController(tabBarItem: cart.viewController.tabBarItem, store: store) { state in
+            let cartItemsCount = state.cart.items.count
+            return cartItemsCount > 0 ? String(cartItemsCount) : nil
+        }
+
+        _ = TabBadgeControllers.shared.add(cartBadgeController)
+
         return BasicComponent(router: router, viewController: mainViewController)
+    }
+}
+
+final class TabBadgeControllers {
+
+    typealias Identifier = UUID
+
+    static let shared = TabBadgeControllers()
+
+    var controllers: [Identifier: TabBadgeController] = [:]
+
+    init() {
+
+    }
+
+    func add(_ controller: TabBadgeController) -> Identifier {
+        let identifier = UUID()
+        self.controllers[identifier] = controller
+        return identifier
+    }
+
+    func remove(_ identifier: Identifier) {
+        self.controllers[identifier] = nil
+    }
+}
+
+final class TabBadgeController: StoreSubscriber {
+
+    typealias BadgeValueForState = (AppState) -> String?
+
+    let tabBarItem: UITabBarItem
+    let badgeValue: BadgeValueForState
+
+    init(tabBarItem: UITabBarItem, store: AppStore, badgeValue: @escaping BadgeValueForState) {
+        self.tabBarItem = tabBarItem
+        self.badgeValue = badgeValue
+        store.subscribe(self)
+    }
+
+    func newState(state: AppState) {
+
+        self.tabBarItem.badgeValue = self.badgeValue(state)
     }
 }
 
