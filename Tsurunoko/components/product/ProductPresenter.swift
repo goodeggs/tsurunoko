@@ -76,7 +76,7 @@ extension Product {
             return Product.ViewModel(
                 title: product.name,
                 detail: product.description,
-                price: String(product.price), // TODO: <ARLO> money formatting
+                price: product.price.formatAsLocalCurrency(),
                 quantity: String(quantityInCart),
                 producerName: producer.name,
                 incrementEnabled: quantityInCart < 10,

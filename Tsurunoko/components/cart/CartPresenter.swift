@@ -58,7 +58,7 @@ extension Cart {
                     title: product.name,
                     detail: product.description,
                     quantity: String(cartItem.quantity),
-                    price: String(product.price)
+                    price: product.price.formatAsLocalCurrency()
                 )
             }
 
