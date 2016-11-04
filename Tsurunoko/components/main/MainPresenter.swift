@@ -8,36 +8,63 @@
 
 import Foundation
 import UIKit
+import ReSwift
 import ReSwiftRouter
 
 protocol MainPresenter {
 
-    func showTab(for viewController: UIViewController)
+    func subscribe()
+    func unsubscribe()
+    func showMarket()
+    func showCart()
+}
+
+protocol MainView: class {
+
+    func render(viewModel: Main.ViewModel)
 }
 
 extension Main {
 
-    struct PresenterImpl: MainPresenter {
+    final class PresenterImpl: StoreSubscriber, MainPresenter {
 
         let store: AppStore
-        let routeMap: RouteMap
+        weak var view: MainView?
 
-        init(store: AppStore, routeMap: RouteMap) {
+        init(store: AppStore) {
             self.store = store
-            self.routeMap = routeMap
         }
 
-        func showTab(for viewController: UIViewController) {
+        func subscribe() {
+            self.store.subscribe(self)
+        }
 
-            guard let (route, _) = self.routeMap.first(where: { (route: RouteElementIdentifier, component: Component) -> Bool in
-                viewController === component.viewController
-            }) else {
-                fatalError("Unable to find matching root for tab view controller.")
+        func unsubscribe() {
+            self.store.unsubscribe(self)
+        }
+
+        // MARK: - StoreSubscriber
+
+        func newState(state: AppState) {
+            guard let view = self.view else {
+                return
             }
 
-            self.store.dispatch(
-                SetRouteAction([Main.identifier, route])
-            )
+            let cartItemsCount = state.cart.items.count
+            let badgeValue = cartItemsCount > 0 ? String(cartItemsCount) : nil
+            let viewModel = ViewModel(cartBadgeValue: badgeValue)
+
+            view.render(viewModel: viewModel)
+        }
+
+        // MARK: - MainPresenter
+
+        func showMarket() {
+            self.store.dispatch(SetRouteAction([Main.identifier, Market.identifier]))
+        }
+
+        func showCart() {
+            self.store.dispatch(SetRouteAction([Main.identifier, Cart.identifier]))
         }
     }
 }

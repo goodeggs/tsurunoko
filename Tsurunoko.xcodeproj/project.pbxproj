@@ -61,6 +61,7 @@
 		09EA66041DC1820A0019FD0D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EA66021DC1820A0019FD0D /* Launch.storyboard */; };
 		09EA66071DC1854B0019FD0D /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA66061DC1854B0019FD0D /* LaunchRouter.swift */; };
 		09F166C01DC84B94008ECA7A /* AuthenticateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F166BF1DC84B94008ECA7A /* AuthenticateRouter.swift */; };
+		09FBE5E31DCCE9A300EDA2C7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FBE5E21DCCE9A300EDA2C7 /* MainViewModel.swift */; };
 		7E401DA4D1EB9A2911C3DFC4 /* Pods_Tsurunoko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CA37CE15976A48B7576117 /* Pods_Tsurunoko.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		09EA66021DC1820A0019FD0D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		09EA66061DC1854B0019FD0D /* LaunchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		09F166BF1DC84B94008ECA7A /* AuthenticateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateRouter.swift; sourceTree = "<group>"; };
+		09FBE5E21DCCE9A300EDA2C7 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		290A4E79BF372C740D587950 /* Pods-Tsurunoko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tsurunoko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tsurunoko/Pods-Tsurunoko.debug.xcconfig"; sourceTree = "<group>"; };
 		47CA37CE15976A48B7576117 /* Pods_Tsurunoko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tsurunoko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FAD1E086FD738D169135367 /* Pods-Tsurunoko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tsurunoko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tsurunoko/Pods-Tsurunoko.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				09814F351DC96BDB0024A197 /* MainPresenter.swift */,
 				0985AF831DC040E000FE3321 /* MainRouter.swift */,
 				0985AF811DC03AA200FE3321 /* MainViewController.swift */,
+				09FBE5E21DCCE9A300EDA2C7 /* MainViewModel.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				092A73641DCA6E4B0081B420 /* ProductGroupViewController.swift in Sources */,
 				09DC6B3F1DCAECE600FDCC45 /* Selected.swift in Sources */,
 				0985AF5D1DC0136100FE3321 /* MarketInterface.swift in Sources */,
+				09FBE5E31DCCE9A300EDA2C7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
