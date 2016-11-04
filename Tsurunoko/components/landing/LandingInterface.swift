@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import ReSwiftRouter
 
-enum Landing: ComponentInterface {
+enum Landing {
 
     static var identifier = "Landing"
 

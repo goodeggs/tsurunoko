@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import ReSwift
 
-enum Market: ComponentInterface {
+enum Market {
 
     static var identifier = "Market"
 

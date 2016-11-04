@@ -10,14 +10,6 @@ import Foundation
 import UIKit
 import ReSwiftRouter
 
-protocol ComponentInterface {
-
-    typealias ID = String
-
-    static var identifier: ID { get }
-    static func newComponent(store: AppStore) -> Component
-}
-
 protocol Component {
 
     var router: Routable { get }

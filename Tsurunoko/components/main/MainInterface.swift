@@ -9,7 +9,7 @@
 import Foundation
 import ReSwiftRouter
 
-enum Main: ComponentInterface {
+enum Main {
 
     static var identifier = "Main"
 

@@ -11,7 +11,7 @@ import UIKit
 import ReSwift
 import ReSwiftRouter
 
-enum Authenticate: ComponentInterface {
+enum Authenticate {
 
     static var identifier = "Authenticate"
 
