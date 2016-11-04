@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let rootRouter = LaunchRouter(store: mainStore)
+        let rootRouter = Launch.Router(store: mainStore)
         router = Router(store: mainStore, rootRoutable: rootRouter) { state in
             state.navigationState
         }

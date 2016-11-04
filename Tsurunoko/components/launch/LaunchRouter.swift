@@ -9,63 +9,66 @@
 import Foundation
 import ReSwiftRouter
 
-final class LaunchRouter: Routable {
+enum Launch {
 
-    lazy var window: UIWindow = {
-        return UIWindow(frame: UIScreen.main.bounds)
-    }()
+    final class Router: Routable {
 
-    lazy var routeMap: RouteMap = {
-        return [
-            Landing.identifier: Landing.newComponent(store: self.store),
-            Main.identifier: Main.newComponent(store: self.store)
-        ]
-    }()
+        lazy var window: UIWindow = {
+            return UIWindow(frame: UIScreen.main.bounds)
+        }()
 
-    let store: AppStore
+        lazy var routeMap: RouteMap = {
+            return [
+                Landing.identifier: Landing.newComponent(store: self.store),
+                Main.identifier: Main.newComponent(store: self.store)
+            ]
+        }()
 
-    init(store: AppStore) {
-        self.store = store
-    }
+        let store: AppStore
 
-    func changeRouteSegment(_ from: RouteElementIdentifier,
-                            to: RouteElementIdentifier,
-                            animated: Bool,
-                            completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-
-        return showViewController(for: to, animated: animated, completionHandler: completionHandler)
-    }
-
-    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                          animated: Bool,
-                          completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-
-        return showViewController(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
-    }
-
-    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                         animated: Bool,
-                         completionHandler: @escaping RoutingCompletionHandler) {
-
-        completionHandler() // called when switching between landing and main, nothing to do here
-    }
-
-    func showViewController(for routeIdentifier: RouteElementIdentifier,
-                            animated: Bool,
-                            completionHandler: RoutingCompletionHandler) -> Routable {
-
-        guard let component = self.routeMap[routeIdentifier] else {
-            fatalError("Unexpected routeIdentifier \(routeIdentifier).")
+        init(store: AppStore) {
+            self.store = store
         }
 
-        defer {
-            completionHandler()
+        func changeRouteSegment(_ from: RouteElementIdentifier,
+                                to: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            return showViewController(for: to, animated: animated, completionHandler: completionHandler)
         }
 
-        self.window.rootViewController = component.viewController
-        self.window.makeKeyAndVisible()
+        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                              animated: Bool,
+                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
 
-        return component.router
+            return showViewController(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
+        }
+
+        func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                             animated: Bool,
+                             completionHandler: @escaping RoutingCompletionHandler) {
+
+            completionHandler() // called when switching between landing and main, nothing to do here
+        }
+
+        func showViewController(for routeIdentifier: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: RoutingCompletionHandler) -> Routable {
+
+            guard let component = self.routeMap[routeIdentifier] else {
+                fatalError("Unexpected routeIdentifier \(routeIdentifier).")
+            }
+
+            defer {
+                completionHandler()
+            }
+
+            self.window.rootViewController = component.viewController
+            self.window.makeKeyAndVisible()
+
+            return component.router
+        }
     }
 }
 
