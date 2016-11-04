@@ -9,30 +9,63 @@
 import Foundation
 import ReSwiftRouter
 
-final class CartRouter: Routable {
+extension Cart {
 
-    func changeRouteSegment(_ from: RouteElementIdentifier,
-                            to: RouteElementIdentifier,
-                            animated: Bool,
-                            completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+    final class Router: Routable {
 
-        completionHandler()
-        return self
-    }
+        lazy var routeMap: RouteMap = {
+            return [
+                Product.identifier: Product.newComponent(store: self.store, navigationController: self.viewController)
+            ]
+        }()
 
-    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                          animated: Bool,
-                          completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+        let store: AppStore
+        let viewController: UINavigationController
 
-        completionHandler()
-        return self
-    }
+        var navigationHandler: NavigationHandler?
 
-    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
-                         animated: Bool,
-                         completionHandler: @escaping RoutingCompletionHandler) {
+        init(store: AppStore, viewController: UINavigationController) {
+            self.store = store
+            self.viewController = viewController
+        }
 
-        completionHandler()
+        func changeRouteSegment(_ from: RouteElementIdentifier,
+                                to: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            return showViewController(for: to, animated: animated, completionHandler: completionHandler)
+        }
+
+        func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                              animated: Bool,
+                              completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            return showViewController(for: routeElementIdentifier, animated: animated, completionHandler: completionHandler)
+        }
+
+        func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier,
+                             animated: Bool,
+                             completionHandler: @escaping RoutingCompletionHandler) {
+
+            completionHandler() // nav controller is handling the pop automatically
+        }
+
+        func showViewController(for routeIdentifier: RouteElementIdentifier,
+                                animated: Bool,
+                                completionHandler: @escaping RoutingCompletionHandler) -> Routable {
+
+            guard let component = self.routeMap[routeIdentifier] else {
+                fatalError("Unexpected routeIdentifier \(routeIdentifier).")
+            }
+
+            self.navigationHandler = NavigationHandler(completionHandler: completionHandler)
+            self.viewController.delegate = self.navigationHandler
+
+            self.viewController.pushViewController(component.viewController, animated: animated)
+
+            return component.router
+        }
     }
 }
 
