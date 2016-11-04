@@ -29,7 +29,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-7W-rKl">
                                             <rect key="frame" x="8" y="0.0" width="359" height="35.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ged-pC-OqJ">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ged-pC-OqJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="231.5" height="35.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Butter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv6-La-F5Z">
@@ -70,6 +70,10 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ged-pC-OqJ" secondAttribute="bottom" id="NxX-4R-AsF"/>
+                                                <constraint firstItem="ged-pC-OqJ" firstAttribute="top" secondItem="d9Y-7W-rKl" secondAttribute="top" id="sXh-96-nGE"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
