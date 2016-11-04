@@ -12,13 +12,13 @@ extension Model {
 
     struct Cart {
 
-        let items: [CartItem]
+        var items: [CartItem]
     }
 
     struct CartItem {
 
         let productID: Product.ID
-        let quantity: Int
+        var quantity: Int
     }
 }
 
